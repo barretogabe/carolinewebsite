@@ -1,0 +1,289 @@
+/* ==========================================================================
+   DRA. CAROLINE MELO • FISIOTERAPIA & PILATES
+   Folha de Estilos Oficial - Paleta extraída da Identidade Visual (arte_caroline.jpeg)
+   Cores: Verde Oliva Herbáceo (#5C7C49), Creme Marfim (#F7F3E7), Branco Puro e Verde Floresta (#1E2D18)
+   ========================================================================== */
+
+/* VARIÁVEIS CSS GLOBAIS */
+:root {
+  --color-sage: #5C7C49;
+  --color-sage-light: #82A16E;
+  --color-sage-ultralight: #EEF3EB;
+  --color-sage-dark: #435E34;
+
+  --color-cream: #F7F3E7;
+  --color-cream-card: #FFFFFF;
+  --color-cream-dark: #EDE7D3;
+
+  --color-forest: #1E2D18;
+  --color-forest-light: #2C4023;
+  --color-forest-dark: #121D0E;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --shadow-subtle: 0 4px 20px -2px rgba(30, 45, 24, 0.05), 0 2px 6px -1px rgba(30, 45, 24, 0.03);
+  --shadow-card: 0 10px 30px -5px rgba(30, 45, 24, 0.08), 0 4px 10px -2px rgba(30, 45, 24, 0.04);
+  --shadow-hover: 0 20px 40px -10px rgba(30, 45, 24, 0.12), 0 8px 16px -4px rgba(30, 45, 24, 0.06);
+}
+
+/* RESET E BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-forest);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TIPOGRAFIA */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* CLASSES UTILITÁRIAS DE CORES */
+.bg-cream { background-color: var(--color-cream); }
+.bg-cream-card { background-color: var(--color-cream-card); }
+.bg-forest { background-color: var(--color-forest); }
+.bg-forest-light { background-color: var(--color-forest-light); }
+.bg-forest-dark { background-color: var(--color-forest-dark); }
+.bg-sage { background-color: var(--color-sage); }
+.bg-sage\/10 { background-color: rgba(92, 124, 73, 0.1); }
+.bg-sage\/15 { background-color: rgba(92, 124, 73, 0.15); }
+.bg-sage\/20 { background-color: rgba(92, 124, 73, 0.2); }
+
+.text-forest { color: var(--color-forest); }
+.text-forest\/80 { color: rgba(30, 45, 24, 0.8); }
+.text-forest\/75 { color: rgba(30, 45, 24, 0.75); }
+.text-forest\/70 { color: rgba(30, 45, 24, 0.7); }
+.text-forest\/65 { color: rgba(30, 45, 24, 0.65); }
+.text-forest\/60 { color: rgba(30, 45, 24, 0.6); }
+
+.text-sage { color: var(--color-sage); }
+.text-sage-light { color: var(--color-sage-light); }
+
+.text-cream { color: var(--color-cream); }
+.text-cream\/90 { color: rgba(247, 243, 231, 0.9); }
+.text-cream\/80 { color: rgba(247, 243, 231, 0.8); }
+.text-cream\/70 { color: rgba(247, 243, 231, 0.7); }
+.text-cream\/50 { color: rgba(247, 243, 231, 0.5); }
+.text-cream\/40 { color: rgba(247, 243, 231, 0.4); }
+
+.border-sage\/10 { border-color: rgba(92, 124, 73, 0.1); }
+.border-sage\/15 { border-color: rgba(92, 124, 73, 0.15); }
+.border-sage\/20 { border-color: rgba(92, 124, 73, 0.2); }
+.border-sage\/30 { border-color: rgba(92, 124, 73, 0.3); }
+.border-sage\/40 { border-color: rgba(92, 124, 73, 0.4); }
+
+/* BOTÕES ESTILIZADOS */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: var(--color-sage);
+  color: #FFFFFF;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(92, 124, 73, 0.35);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-sage-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(92, 124, 73, 0.45);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  color: var(--color-forest);
+  text-decoration: none;
+  border: 1px solid rgba(92, 124, 73, 0.25);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-cream-card);
+  border-color: var(--color-sage);
+  color: var(--color-sage-dark);
+  transform: translateY(-2px);
+}
+
+/* CARDS DE SERVIÇOS & ESPECIALIDADES */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(92, 124, 73, 0.15);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(92, 124, 73, 0.4);
+}
+
+/* CARDS DE DEPOIMENTOS */
+.testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(92, 124, 73, 0.15);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-sage);
+}
+
+/* FERRAMENTA INTERATIVA DE TRIAGEM */
+.triage-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 0.85rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.triage-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-sage-light);
+}
+
+.triage-btn.active {
+  background: #FFFFFF;
+  color: var(--color-forest);
+  border-color: var(--color-sage-light);
+  box-shadow: 0 4px 15px rgba(92, 124, 73, 0.3);
+  font-weight: 700;
+}
+
+.triage-btn.active i {
+  color: var(--color-sage);
+}
+
+.triage-time-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.triage-time-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-sage-light);
+}
+
+.triage-time-btn.active {
+  background: #FFFFFF;
+  color: var(--color-forest);
+  border-color: var(--color-sage-light);
+  font-weight: 700;
+}
+
+/* FAQ ACCORDION */
+.faq-trigger {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.faq-trigger:hover {
+  background-color: rgba(92, 124, 73, 0.05);
+}
+
+.faq-trigger.open i {
+  transform: rotate(180deg);
+  color: var(--color-forest);
+}
+
+/* ANIMAÇÕES FLUTUANTES */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: floatDelay 4.5s ease-in-out infinite;
+}
+
+/* ESTILOS DE FOCO E ACESSIBILIDADE */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 640px) {
+  .triage-btn {
+    padding: 0.65rem 0.25rem;
+    font-size: 0.75rem;
+  }
+}

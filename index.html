@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Caroline Melo • Fisioterapia & Pilates | Atendimento Clínico e Domiciliar em Paulista - PE</title>
+  <meta name="description" content="Dra. Caroline Melo (CREFITO 315194-F) - Fisioterapeuta especialista em Fisioterapia Neurofuncional, Pilates, Pessoa Idosa, Pós-Operatório de Cirurgia Plástica e Atendimento Domiciliar em Paulista - PE." />
+  
+  <!-- Fontes Google: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Ícones FontAwesome via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Tailwind CSS CDN com paleta oficial extraída da arte da Dra. Caroline Melo -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: {
+              DEFAULT: '#5C7C49',
+              light: '#82A16E',
+              dark: '#435E34',
+              ultralight: '#EEF3EB',
+            },
+            cream: {
+              DEFAULT: '#F7F3E7',
+              card: '#FFFFFF',
+              dark: '#EDE7D3',
+            },
+            forest: {
+              DEFAULT: '#1E2D18',
+              light: '#2C4023',
+              dark: '#121D0E',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Folha de Estilos Personalizada -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org Microdados para SEO Local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physiotherapist",
+    "name": "Dra. Caroline Melo - Fisioterapia & Pilates",
+    "image": "caroline_perfil.png",
+    "telephone": "+55-81-98834-5003",
+    "email": "carolinemelo.fisio@hotmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Dr. José Cláudio Gueiros Leite, 571",
+      "addressLocality": "Paulista",
+      "addressRegion": "PE",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.9427,
+      "longitude": -34.8291
+    },
+    "url": "https://carolinemelofisio.com.br",
+    "sameAs": [
+      "https://instagram.com/melscarol"
+    ],
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 07:00-20:00, Sa 08:00-12:00"
+  }
+  </script>
+</head>
+<body class="bg-cream text-forest font-sans antialiased selection:bg-sage selection:text-white">
+
+  <!-- Top Announcement Bar / Contato Rápido & Instagram Oficial -->
+  <div class="bg-forest text-cream text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Atendimentos no Consultório e a Domicílio em Paulista e Região</span>
+      </div>
+      <div class="flex items-center flex-wrap justify-center gap-3 sm:gap-4 text-xs">
+        <a href="#localizacao" class="hover:underline flex items-center gap-1 text-cream/90 hover:text-white">
+          <i class="fas fa-map-marker-alt text-sage-light"></i>
+          <span>Janga • Paulista - PE</span>
+        </a>
+        <span class="text-cream/40 hidden sm:inline">|</span>
+        <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1 font-medium text-emerald-200 hover:text-white">
+          <i class="fab fa-instagram"></i>
+          <span>@melscarol</span>
+        </a>
+        <span class="text-cream/40">|</span>
+        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimentos." target="_blank" class="hover:underline flex items-center gap-1 font-semibold text-emerald-300 hover:text-white">
+          <i class="fab fa-whatsapp"></i>
+          <span>(81) 98834-5003</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Barra de Navegação -->
+  <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-sage/15 transition-all duration-300" id="main-header">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Marca / Logo com Monograma CM Oficial -->
+      <a href="#" class="group flex items-center gap-3 shrink-0">
+        <!-- Balão com o monograma vegetal CM recortado da arte oficial -->
+        <div class="w-12 h-12 rounded-full border-2 border-sage/30 overflow-hidden bg-cream-card shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+          <img src="logo_cm.png" alt="Logotipo Oficial Dra. Caroline Melo" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex flex-col">
+          <!-- Nome rigorosamente em UMA ÚNICA LINHA -->
+          <span class="font-serif text-lg sm:text-2xl font-bold tracking-tight text-forest leading-none whitespace-nowrap">
+            Dra. Caroline Melo
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-sage font-bold mt-1">Fisioterapeuta • CREFITO 315194-F</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop (Sem a palavra 'Interativo') -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-7">
+        <a href="#sobre" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Sobre</a>
+        <a href="#especialidades" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Especialidades</a>
+        <a href="#triagem" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Avaliador de Queixas</a>
+        <a href="#instagram-feed" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors flex items-center gap-1">
+          <i class="fab fa-instagram text-sage"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="anamnese.html" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Anamnese</a>
+        <a href="#localizacao" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Contato</a>
+      </nav>
+
+      <!-- CTA Header -->
+      <div class="hidden md:flex items-center gap-3 shrink-0">
+        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary flex items-center gap-2">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>Agendar Consulta</span>
+        </a>
+      </div>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button id="mobile-menu-btn" aria-label="Abrir menu" class="md:hidden p-2 text-forest hover:text-sage focus:outline-none shrink-0">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream-card border-b border-sage/20 px-6 py-5 shadow-xl transition-all">
+      <nav class="flex flex-col gap-4">
+        <a href="#sobre" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Sobre a Dra. Caroline</a>
+        <a href="#especialidades" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Especialidades & Serviços</a>
+        <a href="#triagem" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Avaliador de Queixas</a>
+        <a href="#instagram-feed" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10 flex items-center gap-2">
+          <i class="fab fa-instagram text-sage"></i>
+          <span>Instagram @melscarol</span>
+        </a>
+        <a href="anamnese.html" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10 flex items-center justify-between">
+          <span>Ficha de Anamnese Pré-Consulta</span>
+          <span class="text-xs bg-sage/15 text-sage font-bold px-2 py-0.5 rounded-full">Digital</span>
+        </a>
+        <a href="#localizacao" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Localização & Contato</a>
+        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary justify-center w-full mt-2 flex items-center gap-2 min-h-[48px]">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp: (81) 98834-5003</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative pt-10 pb-20 md:py-20 overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sage/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-cream-dark/60 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Texto Hero -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage/15 border border-sage/25 text-forest text-xs sm:text-sm font-semibold">
+              <i class="fas fa-leaf text-sage"></i>
+              <span>CREFITO 315194-F • Especialista em Fisioterapia Neurofuncional</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-forest leading-[1.15] tracking-tight">
+              Fisioterapia especializada e Pilates para uma vida <span class="text-sage italic">sem limitações</span>.
+            </h1>
+
+            <p class="text-forest/80 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Atendimentos no consultório no <strong>Janga (Paulista - PE)</strong> e com a comodidade do <strong>Atendimento a Domicílio</strong>. Reabilitação neurofuncional, pós-operatório de cirurgia plástica, gerontologia funcional e ortopedia.
+            </p>
+
+            <!-- Botões Hero -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2 min-h-[48px]">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Agendar Minha Avaliação</span>
+              </a>
+              <a href="#triagem" class="btn-secondary w-full sm:w-auto text-center flex items-center justify-center gap-2 min-h-[48px]">
+                <i class="fas fa-wand-magic-sparkles text-sage"></i>
+                <span>Avaliador de Queixas</span>
+              </a>
+            </div>
+
+            <!-- Especialidades Rápidas em Badges -->
+            <div class="pt-6 border-t border-sage/20 flex flex-wrap gap-2 justify-center lg:justify-start text-xs font-medium text-forest/85">
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-brain text-sage mr-1"></i> Neurofuncional</span>
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-house-user text-sage mr-1"></i> Atendimento a Domicílio</span>
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-wand-magic-sparkles text-sage mr-1"></i> Pós-Op Cirurgia Plástica</span>
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-person-cane text-sage mr-1"></i> Pessoa Idosa</span>
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-bone text-sage mr-1"></i> Traumato-Ortopedia</span>
+              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-dumbbell text-sage mr-1"></i> Pilates</span>
+            </div>
+          </div>
+
+          <!-- Imagem Hero / Card da Arte Oficial -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-sm sm:max-w-md">
+              
+              <!-- Moldura com a Arte Oficial -->
+              <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-sage/20 aspect-[9/16] max-h-[500px]">
+                <img 
+                  src="arte_caroline.jpeg" 
+                  alt="Identidade Visual Oficial da Dra. Caroline Melo - Fisioterapeuta e Pilates" 
+                  class="w-full h-full object-cover transform hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+
+              <!-- Card Flutuante 1: Atendimento Domiciliar -->
+              <div class="absolute -top-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-sage/20 flex items-center gap-3 animate-float hidden sm:flex">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center">
+                  <i class="fas fa-car-side"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-forest">Atendimento a Domicílio</p>
+                  <p class="text-[11px] text-forest/70">Paulista e região metropolitana</p>
+                </div>
+              </div>
+
+              <!-- Card Flutuante 2: Estúdio de Pilates -->
+              <div class="absolute -bottom-5 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float-delay">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+                  <i class="fas fa-map-pin text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-forest">Estúdio no Janga</p>
+                  <p class="text-[11px] text-forest/70">Av. Dr. José Cláudio G. Leite, 571</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: SOBRE A DRA. CAROLINE MELO (FOTO DO CV & CREDENCIAIS) -->
+    <section id="sobre" class="py-20 bg-white border-y border-sage/15">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Foto Oficial Extraída do CV -->
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div class="relative max-w-sm mx-auto">
+              <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-cream">
+                <img 
+                  src="caroline_perfil.png" 
+                  alt="Dra. Caroline Melo - Fisioterapeuta (CREFITO 315194-F)" 
+                  class="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                
+                <div class="p-5 bg-cream text-center border-t border-sage/20 space-y-2">
+                  <h3 class="font-serif text-xl font-bold text-forest">Dra. Caroline Melo</h3>
+                  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-bold border border-sage/25">
+                    <i class="fas fa-certificate text-sage"></i>
+                    <span>CREFITO 315194-F</span>
+                  </div>
+                  <p class="text-xs text-forest/75 font-medium">Especialista em Fisioterapia Neurofuncional</p>
+
+                  <!-- Mini Badge Instagram de Prova Social -->
+                  <div class="pt-2">
+                    <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-sage font-semibold hover:underline">
+                      <i class="fab fa-instagram"></i>
+                      <span>Siga a rotina: @melscarol</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute -bottom-4 -right-4 w-full h-full rounded-3xl border-2 border-sage/30 -z-10 hidden sm:block"></div>
+            </div>
+          </div>
+
+          <!-- Informações do Currículo & Metodologia CIF -->
+          <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
+              <i class="fas fa-user-doctor text-sage"></i>
+              <span>Perfil Profissional</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-tight">
+              Reabilitação pautada na ciência e no bem-estar humano integral.
+            </h2>
+
+            <p class="text-forest/80 leading-relaxed">
+              Sou a <strong>Dra. Caroline Melo</strong> (CREFITO 315194-F), fisioterapeuta especialista em <strong>Fisioterapia Neurofuncional</strong>, com sólida experiência em reabilitação motora, atendimento domiciliar, pós-operatório em cirurgia plástica e Pilates Clínico.
+            </p>
+
+            <p class="text-forest/80 leading-relaxed">
+              Minha conduta clínica é estruturada com base na <strong>Classificação Internacional de Funcionalidade, Incapacidade e Saúde (CIF da OMS)</strong>, garantindo que cada tratamento considere não apenas o sintoma, mas a funcionalidade, o bem-estar emocional e a qualidade de vida global de quem atendo.
+            </p>
+
+            <!-- Cards de Formação Acadêmica Oficial do CV -->
+            <div class="space-y-3 pt-2">
+              <h4 class="text-xs font-bold uppercase tracking-widest text-sage">Formação & Credenciais Acadêmicas</h4>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-3.5 rounded-xl bg-cream border border-sage/15">
+                  <p class="text-xs font-bold text-forest">Pós-Graduação em Neurofuncional</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">Instituto Paiva • 2022</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-cream border border-sage/15">
+                  <p class="text-xs font-bold text-forest">Formação Completa em Pilates</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">Método Clássico e Contemporâneo • 2020</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-cream border border-sage/15">
+                  <p class="text-xs font-bold text-forest">Bacharelado em Fisioterapia</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">UNIBRA • 2019</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-cream border border-sage/15">
+                  <p class="text-xs font-bold text-forest">Abordagem Baseada na CIF</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">Escuta ativa e metas funcionais mensuráveis</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contato Formal / E-mail -->
+            <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-forest/75 border-t border-sage/15">
+              <span><i class="fas fa-envelope text-sage mr-1.5"></i> carolinemelo.fisio@hotmail.com</span>
+              <span class="hidden sm:inline text-sage/30">•</span>
+              <span><i class="fab fa-whatsapp text-sage mr-1.5"></i> (81) 98834-5003</span>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20os%20atendimentos." target="_blank" class="btn-primary inline-flex items-center gap-2 min-h-[48px]">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Converse comigo no WhatsApp</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: ESPECIALIDADES OFICIAIS DA ARTE -->
+    <section id="especialidades" class="py-20 bg-cream">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
+            <i class="fas fa-notes-medical text-sage"></i>
+            <span>Nossas Especialidades</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
+            Áreas de Atuação da Dra. Caroline Melo
+          </h2>
+          <p class="text-forest/75 text-sm sm:text-base">
+            Conheça as modalidades clínicas disponíveis no consultório, estúdio e em domicílio.
+          </p>
+        </div>
+
+        <!-- Grid com os 6 serviços oficiais -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Atendimento a Domicílio -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80" 
+                alt="Atendimento Fisioterapêutico a Domicílio" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-forest">
+                <i class="fas fa-house-user text-sage mr-1"></i> Máxima Comodidade
+              </div>
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Atendimento a Domicílio
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Fisioterapia completa no conforto e na segurança do seu lar. Ideal para pacientes em pós-operatório recente, idosos ou quem possui rotina intensa em Paulista e adjacências.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Paulista e Região</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Fisioterapia Neurofuncional -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" 
+                alt="Fisioterapia Neurofuncional" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia Neurofuncional
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Tratamento e reabilitação de sequelas motoras e neuromusculares (AVC, Doença de Parkinson, neuropatias e traumatismos). Estimulação da neuroplasticidade e do equilíbrio.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Resgate da autonomia</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Fisioterapia da Pessoa Idosa -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=80" 
+                alt="Fisioterapia da Pessoa Idosa" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia da Pessoa Idosa
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Gerontologia voltada para a longevidade ativa, prevenção de quedas, manutenção da densidade óssea, ganho de força muscular e preservação da independência motora.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Longevidade & Equilíbrio</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Pós-Operatório de Cirurgia Plástica -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=700&q=80" 
+                alt="Fisioterapia no Pós-Operatório de Cirurgia Plástica" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-forest">
+                <i class="fas fa-star text-sage mr-1"></i> Especialidade em Destaque
+              </div>
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Pós-Operatório de Cirurgia Plástica
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Acompanhamento especializado para lipoaspiração, abdominoplastia e mamoplastia. Drenagem linfática manual, manejo e prevenção de fibroses, seromas e taping terapêutico.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Recuperação rápida e segura</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Traumato Ortopedia -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" 
+                alt="Fisioterapia em Traumato Ortopedia" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia em Traumato Ortopedia
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Reabilitação de lesões articulares, fraturas, tendinites, bursites e dores crônicas na coluna (hérnia de disco e ciatalgia). Alívio da dor e restauração da mobilidade.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Alívio de dores na coluna e articulações</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Pilates -->
+          <div class="service-card group">
+            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80" 
+                alt="Estúdio de Pilates Dra. Caroline Melo" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Pilates no Estúdio
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Aulas ministradas em aparelhos clássicos (Reformer, Cadillac, Barrel) com foco em postura, fortalecimento do core, ganho de flexibilidade e consciência corporal.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
+                <span>Av. Dr. José Cláudio G. Leite, 571</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO: AVALIADOR DE QUEIXAS / TRIAGEM INTELIGENTE -->
+    <section id="triagem" class="py-20 bg-forest text-cream relative overflow-hidden">
+      <div class="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-sage/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-40 -right-40 w-80 h-80 rounded-full bg-emerald-600/15 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        
+        <div class="text-center space-y-3 mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/20 border border-sage/30 text-emerald-200 text-xs font-semibold uppercase tracking-wider">
+            <i class="fas fa-hand-pointer"></i>
+            <span>Triagem Personalizada</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+            Descubra a conduta recomendada para o seu caso
+          </h2>
+          <p class="text-cream/80 text-sm sm:text-base max-w-xl mx-auto">
+            Selecione abaixo sua principal necessidade para ver a abordagem da Dra. Caroline Melo e gerar sua mensagem direta para o WhatsApp.
+          </p>
+        </div>
+
+        <!-- Box do Avaliador Interativo -->
+        <div class="bg-forest-light/60 backdrop-blur-md rounded-3xl border border-sage/30 p-6 sm:p-10 shadow-2xl">
+          
+          <form id="triage-form" class="space-y-8" onsubmit="return false;">
+            
+            <!-- Passo 1: Especialidade / Foco -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4">
+                1. Qual é o seu foco principal de atendimento?
+              </label>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="area-options">
+                <button type="button" data-area="pos-operatorio" class="triage-btn active min-h-[52px]">
+                  <i class="fas fa-wand-magic-sparkles text-lg mb-1"></i>
+                  <span>Pós-Operatório Cirurgia Plástica</span>
+                </button>
+                <button type="button" data-area="neurofuncional" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-brain text-lg mb-1"></i>
+                  <span>Neurofuncional</span>
+                </button>
+                <button type="button" data-area="idoso" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-person-cane text-lg mb-1"></i>
+                  <span>Pessoa Idosa</span>
+                </button>
+                <button type="button" data-area="traumato-ortopedia" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-bone text-lg mb-1"></i>
+                  <span>Traumato Ortopedia / Dores</span>
+                </button>
+                <button type="button" data-area="domicilio" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-house-user text-lg mb-1"></i>
+                  <span>Atendimento a Domicílio</span>
+                </button>
+                <button type="button" data-area="pilates" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-dumbbell text-lg mb-1"></i>
+                  <span>Pilates no Estúdio</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Passo 2: Há quanto tempo / Fase -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4">
+                2. Há quanto tempo ou em qual fase você se encontra?
+              </label>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="time-options">
+                <button type="button" data-time="pouco" class="triage-time-btn active min-h-[48px]">
+                  <i class="far fa-clock mr-1.5 text-sage-light"></i>
+                  <span>Menos de 1 mês (Recente)</span>
+                </button>
+                <button type="button" data-time="medio" class="triage-time-btn min-h-[48px]">
+                  <i class="far fa-calendar-alt mr-1.5 text-sage-light"></i>
+                  <span>De 1 a 6 meses</span>
+                </button>
+                <button type="button" data-time="cronico" class="triage-time-btn min-h-[48px]">
+                  <i class="fas fa-history mr-1.5 text-sage-light"></i>
+                  <span>Mais de 6 meses</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Passo 3: Observação -->
+            <div>
+              <label for="user-notes" class="block text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2">
+                3. Algum detalhe adicional? (ex: "cirurgia marcada para a próxima semana", "dor na lombar ao caminhar")
+              </label>
+              <input 
+                type="text" 
+                id="user-notes" 
+                placeholder="Escreva brevemente aqui..." 
+                class="w-full bg-forest/80 border border-sage/30 rounded-xl px-4 py-3 text-sm text-white placeholder-cream/40 focus:outline-none focus:border-emerald-400 transition-colors"
+              />
+            </div>
+
+            <!-- Resultado Dinâmico -->
+            <div id="triage-result" class="bg-cream text-forest rounded-2xl p-6 border-2 border-emerald-400 shadow-xl transition-all duration-300 space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-sage/20 text-forest flex items-center justify-center shrink-0">
+                  <i class="fas fa-notes-medical text-lg text-sage"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-lg font-bold text-forest" id="result-title">Recomendação Personalizada</h4>
+                  <p class="text-xs text-forest/70" id="result-subtitle">Abordagem Individualizada</p>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-forest/85 leading-relaxed" id="result-description">
+                Carregando recomendação...
+              </p>
+
+              <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-xs text-forest/65 flex items-center gap-1.5">
+                  <i class="fas fa-shield-halved text-sage"></i>
+                  <span>Sua mensagem será enviada direto para o WhatsApp da Dra. Caroline.</span>
+                </div>
+                
+                <a id="whatsapp-triage-btn" href="#" target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2 text-sm bg-emerald-600 hover:bg-emerald-700 min-h-[48px]">
+                  <i class="fab fa-whatsapp text-lg"></i>
+                  <span>Enviar para Dra. Caroline no WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: VITRINE EDITORIAL DO INSTAGRAM @MELSCAROL -->
+    <section id="instagram-feed" class="py-20 bg-white border-y border-sage/15">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <!-- Cabeçalho da Seção Instagram -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+          <div class="space-y-2 max-w-xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
+              <i class="fab fa-instagram text-sage"></i>
+              <span>Presença Digital • @melscarol</span>
+            </div>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest leading-tight">
+              Acompanhe a rotina clínica no Instagram
+            </h2>
+            <p class="text-forest/75 text-sm sm:text-base leading-relaxed">
+              Dicas diárias sobre postura, reabilitação motora, exercícios de Pilates e bastidores dos atendimentos no estúdio e a domicílio.
+            </p>
+          </div>
+
+          <a 
+            href="https://instagram.com/melscarol" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-primary flex items-center gap-2.5 px-6 py-3.5 bg-gradient-to-r from-sage to-emerald-700 hover:scale-105 transition-transform shadow-lg min-h-[48px]">
+            <i class="fab fa-instagram text-xl"></i>
+            <span>Seguir @melscarol no Instagram</span>
+          </a>
+        </div>
+
+        <!-- Grid de 4 Cards Visuais Temáticos do Instagram -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card Instagram 1 -->
+          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative aspect-square overflow-hidden bg-sage/10">
+              <img 
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" 
+                alt="Postura e Coluna no Instagram @melscarol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="fab fa-instagram text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-4 space-y-1.5">
+              <div class="flex items-center justify-between text-xs text-sage font-bold">
+                <span>POSTURA & ALINHAMENTO</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              </div>
+              <p class="text-xs font-semibold text-forest leading-snug">Dicas para aliviar a tensão nos ombros e coluna após um dia de trabalho.</p>
+            </div>
+          </a>
+
+          <!-- Card Instagram 2 -->
+          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative aspect-square overflow-hidden bg-sage/10">
+              <img 
+                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" 
+                alt="Pilates Clínico em Aparelhos @melscarol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="fab fa-instagram text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-4 space-y-1.5">
+              <div class="flex items-center justify-between text-xs text-sage font-bold">
+                <span>PILATES NO ESTÚDIO</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              </div>
+              <p class="text-xs font-semibold text-forest leading-snug">Como as molas do Reformer protegem suas articulações enquanto fortalecem o core.</p>
+            </div>
+          </a>
+
+          <!-- Card Instagram 3 -->
+          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative aspect-square overflow-hidden bg-sage/10">
+              <img 
+                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" 
+                alt="Pós-Operatório de Cirurgia Plástica @melscarol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="fab fa-instagram text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-4 space-y-1.5">
+              <div class="flex items-center justify-between text-xs text-sage font-bold">
+                <span>PÓS-OPERATÓRIO</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              </div>
+              <p class="text-xs font-semibold text-forest leading-snug">A importância da drenagem manual e do taping para evitar fibroses cirúrgicas.</p>
+            </div>
+          </a>
+
+          <!-- Card Instagram 4 -->
+          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative aspect-square overflow-hidden bg-sage/10">
+              <img 
+                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=600&q=80" 
+                alt="Atendimento Domiciliar e Longevidade @melscarol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                <i class="fab fa-instagram text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-4 space-y-1.5">
+              <div class="flex items-center justify-between text-xs text-sage font-bold">
+                <span>DOMICILIAR & IDOSOS</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              </div>
+              <p class="text-xs font-semibold text-forest leading-snug">Exercícios simples e seguros de equilíbrio para prevenir quedas na melhor idade.</p>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO: LOCALIZAÇÃO, CONTATO & ACESSO OFICIAL -->
+    <section id="localizacao" class="py-20 bg-cream">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
+            <i class="fas fa-location-dot text-sage"></i>
+            <span>Localização & Atendimento</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
+            Onde encontrar a Dra. Caroline Melo
+          </h2>
+          <p class="text-forest/75 text-sm sm:text-base">
+            No estúdio no Janga ou com agendamento direto na sua casa em Paulista e região.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Card de Contatos Oficiais -->
+          <div class="lg:col-span-5 bg-white p-8 rounded-3xl shadow-lg border border-sage/20 flex flex-col justify-between space-y-6">
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-forest mb-1">Dra. Caroline Melo</h3>
+                <p class="text-xs text-sage font-bold uppercase tracking-wider">Fisioterapia • CREFITO 315194-F</p>
+              </div>
+
+              <!-- Endereço do Estúdio -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0 mt-1">
+                  <i class="fas fa-map-pin text-base"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-forest">Endereço do Pilates</h4>
+                  <p class="text-xs sm:text-sm text-forest/75 leading-relaxed mt-0.5">
+                    Av. Dr. José Cláudio Gueiros Leite, 571<br />
+                    Janga • Paulista - PE
+                  </p>
+                </div>
+              </div>
+
+              <!-- Atendimento Domiciliar -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0 mt-1">
+                  <i class="fas fa-house-chimney text-base"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-forest">Atendimento a Domicílio</h4>
+                  <p class="text-xs sm:text-sm text-forest/75 mt-0.5">
+                    Paulista, Olinda e região metropolitana (agendamento prévio)
+                  </p>
+                </div>
+              </div>
+
+              <!-- WhatsApp Oficial -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0 mt-1">
+                  <i class="fab fa-whatsapp text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-forest">Contato & WhatsApp</h4>
+                  <p class="text-xs sm:text-sm text-forest/75 mt-0.5">
+                    <a href="https://wa.me/5581988345003" target="_blank" class="hover:text-sage font-bold text-base text-forest">
+                      (81) 98834-5003
+                    </a>
+                  </p>
+                  <p class="text-[11px] text-forest/60">Clique para iniciar atendimento</p>
+                </div>
+              </div>
+
+              <!-- E-mail Oficial -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0 mt-1">
+                  <i class="fas fa-envelope text-base"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-forest">E-mail Profissional</h4>
+                  <p class="text-xs sm:text-sm text-forest/75 mt-0.5">
+                    <a href="mailto:carolinemelo.fisio@hotmail.com" class="hover:text-sage font-medium">
+                      carolinemelo.fisio@hotmail.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Instagram Oficial -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0 mt-1">
+                  <i class="fab fa-instagram text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-forest">Instagram</h4>
+                  <p class="text-xs sm:text-sm text-forest/75 mt-0.5">
+                    <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="hover:text-sage font-semibold text-sage">
+                      @melscarol
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão de Ação -->
+            <div class="pt-4 border-t border-sage/15">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20consultar%20os%20horários%20disponíveis." target="_blank" class="btn-primary w-full text-center flex items-center justify-center gap-2 min-h-[48px]">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Agendar Consulta: (81) 98834-5003</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Mapa Integrado do Janga / Paulista - PE -->
+          <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden shadow-lg border border-sage/20 min-h-[380px] relative flex flex-col">
+            <div class="p-4 bg-cream border-b border-sage/15 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i class="fas fa-map-marked-alt text-sage"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-forest">Mapa • Janga, Paulista - PE</span>
+              </div>
+              <a href="https://maps.google.com/?q=Av.+Dr.+Jos%C3%A9+Cl%C3%A1udio+Gueiros+Leite,+571,+Paulista+-+PE" target="_blank" class="text-xs text-sage hover:underline flex items-center gap-1 font-medium">
+                <span>Abrir rota no Google Maps</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+
+            <div class="w-full flex-1 min-h-[340px] bg-sage/10 relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.2723652882573!2d-34.83133!3d-7.9427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab3dc4bf7b4a2d%3A0x7d287fae6b2cbb10!2sAv.%20Dr.%20Jos%C3%A9%20Cl%C3%A1udio%20Gueiros%20Leite%2C%20571%20-%20Janga%2C%20Paulista%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style="border:0; min-height: 350px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de localização do estúdio de Pilates da Dra. Caroline Melo em Paulista - PE">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BANNER FINAL DE AÇÃO (CTA) -->
+    <section class="py-16 bg-gradient-to-r from-forest via-forest-light to-forest text-cream text-center relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          Pronta para cuidar da sua saúde com a atenção que você merece?
+        </h2>
+        <p class="text-cream/80 text-sm sm:text-base max-w-xl mx-auto">
+          Fale agora com a Dra. Caroline Melo e agende seu atendimento em domicílio ou no estúdio de Pilates em Paulista - PE.
+        </p>
+        <div class="pt-2">
+          <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20minha%20consulta." target="_blank" class="btn-primary text-base px-8 py-4 inline-flex items-center gap-3 shadow-2xl hover:scale-105 transition-transform bg-emerald-600 hover:bg-emerald-700 min-h-[52px]">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>Agendar no WhatsApp: (81) 98834-5003</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-forest-dark text-cream/70 py-12 border-t border-sage/15 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full border border-sage/30 overflow-hidden bg-cream-card flex items-center justify-center">
+            <img src="logo_cm.png" alt="CM" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="font-serif text-xl font-bold tracking-tight text-white block">Dra. Caroline Melo</span>
+            <span class="text-[10px] uppercase tracking-widest text-sage font-bold">Fisioterapeuta • CREFITO 315194-F</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-cream/80">
+          <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
+          <a href="#especialidades" class="hover:text-white transition-colors">Especialidades</a>
+          <a href="#triagem" class="hover:text-white transition-colors">Avaliador de Queixas</a>
+          <a href="#instagram-feed" class="hover:text-white transition-colors">Instagram</a>
+          <a href="anamnese.html" class="hover:text-white transition-colors">Anamnese</a>
+          <a href="#localizacao" class="hover:text-white transition-colors">Localização</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/5581988345003" target="_blank" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/10 hover:bg-sage text-white flex items-center justify-center transition-colors text-base">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-sage text-white flex items-center justify-center transition-colors text-base">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center text-cream/50 text-[11px]">
+        <p>© <span id="current-year"></span> Dra. Caroline Melo • Fisioterapia & Pilates. Todos os direitos reservados.</p>
+        <p>Av. Dr. José Cláudio Gueiros Leite, 571 - Janga, Paulista - PE | CREFITO 315194-F</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP (Ajustado para não sobrepor telas móveis) -->
+  <a 
+    href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20os%20atendimentos." 
+    target="_blank" 
+    aria-label="Fale conosco no WhatsApp" 
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all duration-300 hover:scale-110 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-emerald-400">
+    <i class="fab fa-whatsapp"></i>
+    <span class="absolute right-16 bg-forest text-cream text-xs font-semibold py-1.5 px-3 rounded-xl shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:block">
+      Fale com a Dra. Caroline
+    </span>
+  </a>
+
+  <!-- Script da Aplicação -->
+  <script src="app.js"></script>
+</body>
+</html>
