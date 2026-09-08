@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    
+  <g id="sprout" fill="#5C7C49">
+    <ellipse cx="40" cy="32" rx="6" ry="9" transform="rotate(38 40 32)" />
+    <path d="M37 40 C34 32 29 24 25 21 C24 19 26 19 27 21 C32 26 36 34 38 43 C34 50 28 59 21 65 C20 66 21 67 22 66 C28 62 35 51 38 43 Z" />
+    <path d="M38 41 C44 37 54 35 64 40 C66 41 65 42 63 42 C54 40 45 41 39 46 C35 50 31 56 26 64 C25 65 24 64 25 63 C29 55 35 47 38 41 Z" />
+  </g>
+
+  </defs>
+  <!-- Staggered arabesque layout like arte_caroline.jpeg -->
+  <use href="#sprout" x="0" y="0" />
+  <use href="#sprout" x="80" y="0" />
+  <use href="#sprout" x="160" y="0" />
+  <use href="#sprout" x="40" y="80" />
+  <use href="#sprout" x="120" y="80" />
+  <use href="#sprout" x="0" y="160" />
+  <use href="#sprout" x="80" y="160" />
+  <use href="#sprout" x="160" y="160" />
+</svg>

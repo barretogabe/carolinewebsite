@@ -288,42 +288,53 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   }
 }
 
-/* ARABESCOS BOTÂNICOS DECORATIVOS (Inspirados na Identidade Visual Oficial) */
+/* ARABESCOS BOTÂNICOS DECORATIVOS (Idênticos à Identidade Visual Oficial arte_caroline.jpeg) */
 .arabesque-pattern {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.12;
+  opacity: 0.15;
   transition: opacity 0.3s ease;
 }
 
+.arabesque-wallpaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.045;
+  background-image: url('arabesco_pattern.svg');
+  background-repeat: repeat;
+  background-size: 140px 140px;
+}
+
 .arabesque-corner-tl {
-  top: -20px;
-  left: -20px;
-  width: 240px;
-  height: 240px;
+  top: 10px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
 }
 
 .arabesque-corner-tr {
-  top: -20px;
-  right: -20px;
-  width: 260px;
-  height: 260px;
+  top: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
   transform: scaleX(-1);
 }
 
 .arabesque-corner-br {
-  bottom: -20px;
-  right: -20px;
-  width: 260px;
-  height: 260px;
+  bottom: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
   transform: rotate(180deg);
 }
 
 .arabesque-corner-bl {
-  bottom: -20px;
-  left: -20px;
-  width: 240px;
-  height: 240px;
+  bottom: 10px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
   transform: scaleY(-1);
 }
