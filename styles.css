@@ -287,3 +287,43 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     font-size: 0.75rem;
   }
 }
+
+/* ARABESCOS BOTÂNICOS DECORATIVOS (Inspirados na Identidade Visual Oficial) */
+.arabesque-pattern {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.12;
+  transition: opacity 0.3s ease;
+}
+
+.arabesque-corner-tl {
+  top: -20px;
+  left: -20px;
+  width: 240px;
+  height: 240px;
+}
+
+.arabesque-corner-tr {
+  top: -20px;
+  right: -20px;
+  width: 260px;
+  height: 260px;
+  transform: scaleX(-1);
+}
+
+.arabesque-corner-br {
+  bottom: -20px;
+  right: -20px;
+  width: 260px;
+  height: 260px;
+  transform: rotate(180deg);
+}
+
+.arabesque-corner-bl {
+  bottom: -20px;
+  left: -20px;
+  width: 240px;
+  height: 240px;
+  transform: scaleY(-1);
+}

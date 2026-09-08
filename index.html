@@ -127,22 +127,18 @@
         </div>
       </a>
 
-      <!-- Menu Desktop (Sem a palavra 'Interativo') -->
-      <nav class="hidden md:flex items-center gap-6 lg:gap-7">
-        <a href="#sobre" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Sobre</a>
-        <a href="#especialidades" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Especialidades</a>
-        <a href="#triagem" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Avaliador de Queixas</a>
-        <a href="#instagram-feed" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors flex items-center gap-1">
-          <i class="fab fa-instagram text-sage"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="anamnese.html" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Anamnese</a>
-        <a href="#localizacao" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors">Contato</a>
+      <!-- Menu Desktop (Sem a palavra 'Interativo', sem Instagram redundante com contatos) -->
+      <nav class="hidden md:flex items-center gap-5 lg:gap-7">
+        <a href="#sobre" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Sobre</a>
+        <a href="#especialidades" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Especialidades</a>
+        <a href="#triagem" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Avaliador de Queixas</a>
+        <a href="anamnese.html" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Anamnese</a>
+        <a href="#localizacao" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Contato</a>
       </nav>
 
       <!-- CTA Header -->
       <div class="hidden md:flex items-center gap-3 shrink-0">
-        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary flex items-center gap-2">
+        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary flex items-center gap-2 whitespace-nowrap">
           <i class="fab fa-whatsapp text-lg"></i>
           <span>Agendar Consulta</span>
         </a>
@@ -160,10 +156,6 @@
         <a href="#sobre" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Sobre a Dra. Caroline</a>
         <a href="#especialidades" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Especialidades & Serviços</a>
         <a href="#triagem" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Avaliador de Queixas</a>
-        <a href="#instagram-feed" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10 flex items-center gap-2">
-          <i class="fab fa-instagram text-sage"></i>
-          <span>Instagram @melscarol</span>
-        </a>
         <a href="anamnese.html" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10 flex items-center justify-between">
           <span>Ficha de Anamnese Pré-Consulta</span>
           <span class="text-xs bg-sage/15 text-sage font-bold px-2 py-0.5 rounded-full">Digital</span>
@@ -180,6 +172,20 @@
   <main>
     <!-- HERO SECTION -->
     <section class="relative pt-10 pb-20 md:py-20 overflow-hidden">
+      <!-- Arabescos Botânicos Sutis de Fundo (Identidade Visual) -->
+      <svg class="arabesque-pattern arabesque-corner-tr hidden sm:block" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M180,20 C140,40 110,80 100,130 C95,155 105,175 125,185 C115,160 120,135 140,110 C165,80 190,60 180,20 Z" fill="#5C7C49"/>
+        <path d="M120,10 C90,30 70,65 65,105 C60,125 70,140 85,150 C75,130 80,110 95,90 C115,65 130,45 120,10 Z" fill="#5C7C49" opacity="0.7"/>
+        <circle cx="160" cy="40" r="14" fill="#5C7C49" opacity="0.8"/>
+        <circle cx="105" cy="25" r="9" fill="#5C7C49" opacity="0.6"/>
+        <path d="M50,140 C80,120 120,130 160,170 C130,165 100,150 70,170 C55,160 45,150 50,140 Z" fill="#5C7C49" opacity="0.5"/>
+      </svg>
+      <svg class="arabesque-pattern arabesque-corner-bl hidden sm:block" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M180,20 C140,40 110,80 100,130 C95,155 105,175 125,185 C115,160 120,135 140,110 C165,80 190,60 180,20 Z" fill="#5C7C49"/>
+        <circle cx="160" cy="40" r="12" fill="#5C7C49" opacity="0.8"/>
+        <path d="M120,10 C90,30 70,65 65,105 C60,125 70,140 85,150 C75,130 80,110 95,90 C115,65 130,45 120,10 Z" fill="#5C7C49" opacity="0.7"/>
+      </svg>
+
       <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sage/10 blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-cream-dark/60 blur-3xl pointer-events-none"></div>
 
@@ -237,25 +243,25 @@
                 />
               </div>
 
-              <!-- Card Flutuante 1: Atendimento Domiciliar -->
-              <div class="absolute -top-4 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-sage/20 flex items-center gap-3 animate-float hidden sm:flex">
-                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center">
+              <!-- Card Flutuante 1: Atendimento Domiciliar (Superior Esquerdo) -->
+              <div class="absolute -top-5 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-lg border border-sage/20 flex items-center gap-3 animate-float z-20">
+                <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0">
                   <i class="fas fa-car-side"></i>
                 </div>
-                <div>
+                <div class="leading-tight">
                   <p class="text-xs font-bold text-forest">Atendimento a Domicílio</p>
-                  <p class="text-[11px] text-forest/70">Paulista, Olinda e região</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">Paulista, Olinda e região</p>
                 </div>
               </div>
 
-              <!-- Card Flutuante 2: Estúdio de Pilates -->
-              <div class="absolute -bottom-5 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float-delay">
-                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+              <!-- Card Flutuante 2: Estúdio de Pilates (Inferior Direito) -->
+              <div class="absolute -bottom-5 -right-3 sm:-right-6 bg-white/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float-delay z-20">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
                   <i class="fas fa-map-pin text-lg"></i>
                 </div>
-                <div>
+                <div class="leading-tight">
                   <p class="text-xs font-bold text-forest">Estúdio no Janga</p>
-                  <p class="text-[11px] text-forest/70">Av. Dr. José Cláudio G. Leite, 571</p>
+                  <p class="text-[11px] text-forest/70 mt-0.5">Av. Dr. José Cláudio G. Leite, 571</p>
                 </div>
               </div>
 
@@ -290,11 +296,16 @@
                   </div>
                   <p class="text-xs text-forest/75 font-medium">Especialista em Fisioterapia Neurofuncional</p>
 
-                  <!-- Mini Badge Instagram de Prova Social -->
-                  <div class="pt-2">
-                    <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-sage font-semibold hover:underline">
-                      <i class="fab fa-instagram"></i>
-                      <span>Siga a rotina: @melscarol</span>
+                  <!-- Mini Badge Instagram de Prova Social (Claramente Clicável) -->
+                  <div class="pt-3">
+                    <a 
+                      href="https://instagram.com/melscarol" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sage/15 hover:bg-forest text-forest hover:text-cream text-xs font-semibold transition-all duration-300 transform hover:scale-105 shadow-sm border border-sage/25 group/insta cursor-pointer">
+                      <i class="fab fa-instagram text-sage group-hover/insta:text-emerald-300 text-sm transition-colors"></i>
+                      <span>Siga a rotina: <strong>@melscarol</strong></span>
+                      <i class="fas fa-arrow-up-right-from-square text-[10px] opacity-70 group-hover/insta:opacity-100 transition-opacity"></i>
                     </a>
                   </div>
                 </div>
@@ -367,13 +378,24 @@
     </section>
 
     <!-- SEÇÃO: ESPECIALIDADES OFICIAIS DA ARTE -->
-    <section id="especialidades" class="py-20 bg-cream">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="especialidades" class="py-20 bg-cream relative overflow-hidden">
+      <!-- Arabesco Botânico Suave de Fundo -->
+      <svg class="arabesque-pattern arabesque-corner-tl hidden md:block" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M180,20 C140,40 110,80 100,130 C95,155 105,175 125,185 C115,160 120,135 140,110 C165,80 190,60 180,20 Z" fill="#5C7C49"/>
+        <circle cx="160" cy="40" r="14" fill="#5C7C49" opacity="0.8"/>
+        <path d="M120,10 C90,30 70,65 65,105 C60,125 70,140 85,150 C75,130 80,110 95,90 C115,65 130,45 120,10 Z" fill="#5C7C49" opacity="0.7"/>
+      </svg>
+      <svg class="arabesque-pattern arabesque-corner-br hidden md:block" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M180,20 C140,40 110,80 100,130 C95,155 105,175 125,185 C115,160 120,135 140,110 C165,80 190,60 180,20 Z" fill="#5C7C49"/>
+        <circle cx="160" cy="40" r="14" fill="#5C7C49" opacity="0.8"/>
+      </svg>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
             <i class="fas fa-notes-medical text-sage"></i>
-            <span>Nossas Especialidades</span>
+            <span>Especialidades</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
             Áreas de Atuação da Dra. Caroline Melo
@@ -716,90 +738,103 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <!-- Card Instagram 1 -->
-          <a href="https://www.instagram.com/p/C9OCQ7iOcys/" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative aspect-square overflow-hidden bg-sage/10">
+          <a href="https://www.instagram.com/p/C9OCQ7iOcys/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_C9OCQ7iOcys.jpg" 
                 alt="Pilates Clínico e Movimento @melscarol" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5">
-              <div class="flex items-center justify-between text-xs text-sage font-bold">
-                <span>PILATES CLÍNICO</span>
-                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-sage font-bold">
+                  <span>PILATES CLÍNICO</span>
+                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest leading-snug mt-1">Seu corpo é seu maior bem: fortalecimento, controle e alinhamento no Reformer.</p>
               </div>
-              <p class="text-xs font-semibold text-forest leading-snug">Seu corpo é seu maior bem: fortalecimento, controle e alinhamento no Reformer.</p>
             </div>
           </a>
 
           <!-- Card Instagram 2 -->
-          <a href="https://www.instagram.com/p/DEyKcjrRcqr/" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative aspect-square overflow-hidden bg-sage/10">
+          <a href="https://www.instagram.com/p/DEyKcjrRcqr/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_DEyKcjrRcqr.jpg" 
                 alt="Estúdio Dra. Caroline Melo e Prática de Pilates @melscarol" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5">
-              <div class="flex items-center justify-between text-xs text-sage font-bold">
-                <span>ESTÚDIO & MOVIMENTO</span>
-                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-sage font-bold">
+                  <span>ESTÚDIO & MOVIMENTO</span>
+                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest leading-snug mt-1">Novos desafios e evolução constante para o seu corpo através do método Pilates.</p>
               </div>
-              <p class="text-xs font-semibold text-forest leading-snug">Novos desafios e evolução constante para o seu corpo através do método Pilates.</p>
             </div>
           </a>
 
           <!-- Card Instagram 3 -->
-          <a href="https://www.instagram.com/p/DBKauLnOpoU/" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative aspect-square overflow-hidden bg-sage/10">
+          <a href="https://www.instagram.com/p/DBKauLnOpoU/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_DBKauLnOpoU.jpg" 
                 alt="Postura e Consciência Corporal no Pilates @melscarol" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5">
-              <div class="flex items-center justify-between text-xs text-sage font-bold">
-                <span>POSTURA & CONSCIÊNCIA</span>
-                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-sage font-bold">
+                  <span>POSTURA & CONSCIÊNCIA</span>
+                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest leading-snug mt-1">"Cresce a coluna, fecha a escápula": o corpo alcança o que a mente acredita.</p>
               </div>
-              <p class="text-xs font-semibold text-forest leading-snug">"Cresce a coluna, fecha a escápula": o corpo alcança o que a mente acredita.</p>
             </div>
           </a>
 
-          <!-- Card Instagram 4 -->
-          <a href="https://www.instagram.com/reel/DNB-hMxxRWD/" target="_blank" rel="noopener noreferrer" class="group block bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative aspect-square overflow-hidden bg-sage/10">
+          <!-- Card Instagram 4 (Reel Vertical sem corte) -->
+          <a href="https://www.instagram.com/reel/DNB-hMxxRWD/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_DNB-hMxxRWD.jpg" 
                 alt="Exercício no Ladder Barrel @melscarol" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
-            </div>
-            <div class="p-4 space-y-1.5">
-              <div class="flex items-center justify-between text-xs text-sage font-bold">
-                <span>PILATES NO BARREL</span>
-                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+              <!-- Badge Indicativo de Reel Original -->
+              <div class="absolute top-2.5 right-2.5 bg-black/50 text-white text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
+                <i class="fas fa-play text-[8px]"></i>
+                <span>Vídeo</span>
               </div>
-              <p class="text-xs font-semibold text-forest leading-snug">A arte do controle corporal, flexibilidade e extensão da coluna no Barrel.</p>
+            </div>
+            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-sage font-bold">
+                  <span>PILATES NO BARREL</span>
+                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                </div>
+                <p class="text-xs font-semibold text-forest leading-snug mt-1">A arte do controle corporal, flexibilidade e extensão da coluna no Barrel.</p>
+              </div>
             </div>
           </a>
 
