@@ -52,10 +52,10 @@ const TRIAGE_DATA = {
     whatsappTag: "Fisioterapia Traumato-Ortopédica"
   },
   "domicilio": {
-    title: "Recomendação Personalizada: Pilates em Casa & Atendimento Domiciliar",
-    subtitle: "Aulas Personalizadas e Reabilitação no Conforto do Seu Lar",
-    description: "Levamos toda a estrutura fisioterapêutica e do método Pilates até a sua casa em Paulista, Olinda e região. Perfeito para quem busca praticidade, reabilitação personalizada ou aulas de Pilates no conforto e privacidade do próprio lar.",
-    whatsappTag: "Pilates em Casa / Domiciliar"
+    title: "Recomendação Personalizada: Pilates em Casa ou em Grupo & Domiciliar",
+    subtitle: "Aulas Particulares em Casa, Vivências e Grupos em Eventos",
+    description: "Levamos toda a estrutura do método Pilates e fisioterapia até você: seja para aulas particulares no conforto do seu lar, grupos de amigos/família ou eventos corporativos em Paulista, Olinda e região.",
+    whatsappTag: "Pilates em Casa ou em Grupo"
   },
   "pilates": {
     title: "Recomendação Personalizada: Pilates no Estúdio",
