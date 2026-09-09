@@ -56,7 +56,7 @@
     "@context": "https://schema.org",
     "@type": "Physiotherapist",
     "name": "Dra. Caroline Melo - Fisioterapia & Pilates",
-    "image": "caroline_perfil.png",
+    "image": "assets/fotos/caroline_perfil.jpg",
     "telephone": "+55-81-98834-5003",
     "email": "carolinemelo.fisio@hotmail.com",
     "address": {
@@ -128,18 +128,20 @@
       </a>
 
       <!-- Menu Desktop (Sem a palavra 'Interativo', sem Instagram redundante com contatos) -->
-      <nav class="hidden md:flex items-center gap-5 lg:gap-7">
-        <a href="#sobre" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Sobre</a>
-        <a href="#especialidades" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Especialidades</a>
-        <a href="#triagem" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Avaliador de Queixas</a>
-        <a href="anamnese.html" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Anamnese</a>
-        <a href="#localizacao" class="text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Contato</a>
+      <nav class="hidden md:flex items-center gap-3.5 lg:gap-5">
+        <a href="#sobre" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Sobre</a>
+        <a href="#especialidades" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Especialidades</a>
+        <a href="#estudio" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Estúdio Pilates</a>
+        <a href="#triagem" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Triagem Rápida</a>
+        <a href="anamnese.html" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Anamnese</a>
+        <a href="#faq" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Dúvidas</a>
+        <a href="#localizacao" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Contato</a>
       </nav>
 
       <!-- CTA Header -->
       <div class="hidden md:flex items-center gap-3 shrink-0">
-        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary flex items-center gap-2 whitespace-nowrap">
-          <i class="fab fa-whatsapp text-lg"></i>
+        <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary flex items-center gap-2 whitespace-nowrap text-xs lg:text-sm px-4 lg:px-5 py-2.5">
+          <i class="fab fa-whatsapp text-base"></i>
           <span>Agendar Consulta</span>
         </a>
       </div>
@@ -155,11 +157,13 @@
       <nav class="flex flex-col gap-4">
         <a href="#sobre" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Sobre a Dra. Caroline</a>
         <a href="#especialidades" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Especialidades & Serviços</a>
-        <a href="#triagem" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Avaliador de Queixas</a>
+        <a href="#estudio" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Estúdio de Pilates no Janga</a>
+        <a href="#triagem" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Triagem Rápida</a>
         <a href="anamnese.html" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10 flex items-center justify-between">
           <span>Ficha de Anamnese Pré-Consulta</span>
           <span class="text-xs bg-sage/15 text-sage font-bold px-2 py-0.5 rounded-full">Digital</span>
         </a>
+        <a href="#faq" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Dúvidas Frequentes</a>
         <a href="#localizacao" class="mobile-nav-link text-base font-medium text-forest hover:text-sage py-1 border-b border-sage/10">Localização & Contato</a>
         <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary justify-center w-full mt-2 flex items-center gap-2 min-h-[48px]">
           <i class="fab fa-whatsapp text-lg"></i>
@@ -182,78 +186,105 @@
       <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-cream-dark/60 blur-3xl pointer-events-none"></div>
 
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Texto Hero -->
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Texto Hero (Coluna da Esquerda) -->
+          <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage/15 border border-sage/25 text-forest text-xs sm:text-sm font-semibold">
               <i class="fas fa-leaf text-sage"></i>
               <span>CREFITO 315194-F • Pós-Graduada em Fisioterapia Neurofuncional</span>
             </div>
 
-            <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-forest leading-[1.15] tracking-tight">
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl font-bold text-forest leading-[1.15] tracking-tight">
               Fisioterapia especializada e Pilates para uma vida <span class="text-sage italic">sem limitações</span>.
             </h1>
 
-            <p class="text-forest/80 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p class="text-forest text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Atendimentos no consultório no <strong>Janga (Paulista - PE)</strong> e com a comodidade do <strong>Atendimento a Domicílio</strong>. Reabilitação neurofuncional, pós-operatório de cirurgia plástica, gerontologia funcional e ortopedia.
             </p>
 
-            <!-- Botões Hero -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2 min-h-[48px]">
-                <i class="fab fa-whatsapp text-lg"></i>
-                <span>Agendar Minha Avaliação</span>
-              </a>
-              <a href="#triagem" class="btn-secondary w-full sm:w-auto text-center flex items-center justify-center gap-2 min-h-[48px] whitespace-nowrap">
-                <i class="fas fa-wand-magic-sparkles text-sage"></i>
-                <span class="whitespace-nowrap">Avaliador de Queixas</span>
+            <!-- Botão Único Unificado Hero -->
+            <div class="flex items-center justify-center lg:justify-start pt-2">
+              <a href="#triagem" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-3 px-8 py-4 text-base shadow-xl hover:scale-105 transition-all duration-300 min-h-[52px]">
+                <i class="fas fa-clipboard-check text-xl"></i>
+                <span class="font-bold">Triagem Rápida para seu Atendimento</span>
               </a>
             </div>
 
-            <!-- Especialidades Rápidas em Badges -->
-            <div class="pt-6 border-t border-sage/20 flex flex-wrap gap-2 justify-center lg:justify-start text-xs font-medium text-forest/85">
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-brain text-sage mr-1"></i> Neurofuncional</span>
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-house-user text-sage mr-1"></i> Atendimento a Domicílio</span>
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-wand-magic-sparkles text-sage mr-1"></i> Pós-Op Cirurgia Plástica</span>
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-person-cane text-sage mr-1"></i> Pessoa Idosa</span>
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-bone text-sage mr-1"></i> Traumato-Ortopedia</span>
-              <span class="px-3 py-1.5 bg-white rounded-full border border-sage/20 shadow-sm"><i class="fas fa-dumbbell text-sage mr-1"></i> Pilates</span>
+            <!-- Especialidades Rápidas em Badges (Cores 100% Sólidas e Nítidas) -->
+            <div class="pt-6 border-t border-sage/20 flex flex-wrap gap-2 justify-center lg:justify-start text-xs font-semibold text-forest">
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-brain text-sage mr-1.5"></i> Neurofuncional</span>
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-house-user text-sage mr-1.5"></i> Atendimento a Domicílio</span>
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-wand-magic-sparkles text-sage mr-1.5"></i> Pós-Op Cirurgia Plástica</span>
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-person-cane text-sage mr-1.5"></i> Pessoa Idosa</span>
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-bone text-sage mr-1.5"></i> Traumato-Ortopedia</span>
+              <span class="px-3.5 py-1.5 bg-white rounded-full border border-sage/30 shadow-sm text-forest"><i class="fas fa-dumbbell text-sage mr-1.5"></i> Pilates</span>
             </div>
           </div>
 
-          <!-- Imagem Hero / Card da Arte Oficial -->
-          <div class="lg:col-span-5 relative">
-            <div class="relative mx-auto max-w-sm sm:max-w-md">
+          <!-- Colagem Fotográfica Estilizada & Clean Hero (Coluna da Direita Expandida) -->
+          <div class="lg:col-span-6 relative mt-8 lg:mt-0">
+            <div class="relative mx-auto max-w-lg lg:max-w-none w-full">
               
-              <!-- Moldura com a Arte Oficial -->
-              <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-sage/20 aspect-[9/16] max-h-[500px]">
-                <img 
-                  src="arte_caroline.jpeg" 
-                  alt="Identidade Visual Oficial da Dra. Caroline Melo - Fisioterapeuta e Pilates" 
-                  class="w-full h-full object-cover transform hover:scale-[1.02] transition-transform duration-500"
-                />
+              <!-- Grid de Composição Fotográfica Elegante & Imersivo -->
+              <div class="grid grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
+                
+                <!-- Foto Principal (Destaque Maior: Dra. Caroline no Estúdio com Bola de Pilates) -->
+                <div class="col-span-7 relative group">
+                  <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-cream-card h-[440px] sm:h-[500px] lg:h-[530px] w-full">
+                    <img 
+                      src="assets/fotos/caroline_hero_bola.jpg" 
+                      alt="Dra. Caroline Melo - Fisioterapeuta e Instrutora de Pilates" 
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </div>
+                </div>
+
+                <!-- Coluna Secundária (2 Fotos Menores em Harmonia Vertical) -->
+                <div class="col-span-5 flex flex-col justify-between gap-3.5 sm:gap-4 h-[440px] sm:h-[500px] lg:h-[530px]">
+                  
+                  <!-- Card 1: Pilates com Magic Circle -->
+                  <div class="relative group rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-cream-card flex-1">
+                    <img 
+                      src="assets/fotos/caroline_hero_anel.jpg" 
+                      alt="Prática de Pilates com Dra. Caroline Melo" 
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </div>
+
+                  <!-- Card 2: Prática de Pilates no Estúdio (Acima do Balão 'Estúdio no Janga') -->
+                  <div class="relative group rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-cream-card flex-1">
+                    <img 
+                      src="assets/fotos/caroline_hero_reformer.jpg" 
+                      alt="Prática de Pilates no Aparelho Reformer - Estúdio Dra. Caroline Melo" 
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      style="object-position: 94% center;"
+                    />
+                  </div>
+
+                </div>
+
               </div>
 
               <!-- Card Flutuante 1: Atendimento Domiciliar (Superior Esquerdo) -->
-              <div class="absolute -top-5 left-2 sm:-left-6 bg-white/95 backdrop-blur-md py-2.5 px-4 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float z-20">
+              <div class="absolute -top-5 -left-2 sm:-left-6 bg-white/95 backdrop-blur-md py-2.5 px-4 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float z-20">
                 <div class="w-10 h-10 rounded-xl bg-sage/15 text-sage flex items-center justify-center shrink-0">
-                  <i class="fas fa-car-side"></i>
+                  <i class="fas fa-car-side text-base"></i>
                 </div>
                 <div class="leading-tight text-left">
                   <p class="text-xs font-bold text-forest whitespace-nowrap">Atendimento a Domicílio</p>
-                  <p class="text-[11px] text-forest/70 mt-0.5 whitespace-nowrap">Paulista, Olinda e região</p>
+                  <p class="text-[10px] sm:text-[11px] text-forest/70 mt-0.5 whitespace-nowrap">Paulista, Olinda e região</p>
                 </div>
               </div>
 
               <!-- Card Flutuante 2: Estúdio de Pilates (Inferior Direito) -->
-              <div class="absolute -bottom-5 right-2 sm:-right-6 bg-white/95 backdrop-blur-md py-2.5 px-4 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float z-20">
+              <div class="absolute -bottom-5 -right-2 sm:-right-6 bg-white/95 backdrop-blur-md py-2.5 px-4 rounded-2xl shadow-xl border border-sage/20 flex items-center gap-3 animate-float z-20">
                 <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
-                  <i class="fas fa-map-pin text-lg"></i>
+                  <i class="fas fa-map-pin text-base"></i>
                 </div>
                 <div class="leading-tight text-left">
                   <p class="text-xs font-bold text-forest whitespace-nowrap">Estúdio no Janga</p>
-                  <p class="text-[11px] text-forest/70 mt-0.5 whitespace-nowrap">Av. Dr. José Cláudio G. Leite, 571</p>
+                  <p class="text-[10px] sm:text-[11px] text-forest/70 mt-0.5 whitespace-nowrap">Av. Dr. José Cláudio G. Leite, 571</p>
                 </div>
               </div>
 
@@ -269,14 +300,14 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Foto Oficial Extraída do CV -->
+          <!-- Foto Oficial da Dra. Caroline Melo -->
           <div class="lg:col-span-5 order-2 lg:order-1">
             <div class="relative max-w-sm mx-auto">
               <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-cream">
                 <img 
-                  src="caroline_perfil.png" 
-                  alt="Dra. Caroline Melo - Fisioterapeuta (CREFITO 315194-F)" 
-                  class="w-full h-auto object-cover"
+                  src="assets/fotos/caroline_perfil.jpg" 
+                  alt="Dra. Caroline Melo - Fisioterapeuta e Especialista em Pilates (CREFITO 315194-F)" 
+                  class="w-full h-auto object-cover transform hover:scale-[1.02] transition-transform duration-500"
                   loading="lazy"
                 />
                 
@@ -395,143 +426,14 @@
         <!-- Grid com os 6 serviços oficiais -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          <!-- Card 1: Atendimento a Domicílio -->
+          <!-- Card 1: Pilates em Casa, em Eventos com Grupos e no Estúdio (PRIMEIRO BLOCO) -->
           <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
               <img 
-                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80" 
-                alt="Atendimento Fisioterapêutico a Domicílio" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Atendimento a Domicílio
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
-                  Fisioterapia completa no conforto e na segurança do seu lar. Ideal para pacientes em pós-operatório recente, idosos ou quem possui rotina intensa em Paulista e adjacências.
-                </p>
-              </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Paulista, Olinda e Região</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: Fisioterapia Neurofuncional -->
-          <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=700&q=80" 
-                alt="Fisioterapia Neurofuncional" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Fisioterapia Neurofuncional
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
-                  Tratamento e reabilitação de sequelas motoras e neuromusculares (AVC, Doença de Parkinson, neuropatias e traumatismos). Estimulação da neuroplasticidade e do equilíbrio.
-                </p>
-              </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Resgate da autonomia</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Fisioterapia da Pessoa Idosa -->
-          <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=80" 
-                alt="Fisioterapia da Pessoa Idosa" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Fisioterapia da Pessoa Idosa
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
-                  Gerontologia voltada para a longevidade ativa, prevenção de quedas, manutenção da densidade óssea, ganho de força muscular e preservação da independência motora.
-                </p>
-              </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Longevidade & Equilíbrio</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: Pós-Operatório de Cirurgia Plástica -->
-          <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=700&q=80" 
-                alt="Fisioterapia no Pós-Operatório de Cirurgia Plástica" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Pós-Operatório de Cirurgia Plástica
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
-                  Acompanhamento especializado para lipoaspiração, abdominoplastia e mamoplastia. Drenagem linfática manual, manejo e prevenção de fibroses, seromas e taping terapêutico.
-                </p>
-              </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Recuperação rápida e segura</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5: Traumato Ortopedia -->
-          <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80" 
-                alt="Fisioterapia em Traumato Ortopedia" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Fisioterapia em Traumato Ortopedia
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
-                  Reabilitação de lesões articulares, fraturas, tendinites, bursites e dores crônicas na coluna (hérnia de disco e ciatalgia). Alívio da dor e restauração da mobilidade.
-                </p>
-              </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Alívio de dores na coluna e articulações</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6: Pilates em Casa, em Eventos com Grupos e no Estúdio -->
-          <div class="service-card group">
-            <div class="relative h-48 overflow-hidden rounded-t-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80" 
+                src="assets/fotos/pilates_em_casa.jpg" 
                 alt="Pilates em Casa, em Eventos com Grupos e no Estúdio Dra. Caroline Melo" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                style="object-position: center 10%;"
                 loading="lazy"
               />
             </div>
@@ -544,13 +446,307 @@
                   Prática personalizada adaptada às suas necessidades: aulas particulares no conforto do seu lar, vivências corporais e aulas em grupo para eventos, ou sessões completas em aparelhos no estúdio.
                 </p>
               </div>
-              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-medium">
-                <span>Personalizado • Domiciliar • Estúdio</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              <a href="#triagem" data-select-area="domicilio" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Personalizado • Domiciliar • Estúdio</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Atendimento a Domicílio (SEGUNDO BLOCO) -->
+          <div class="service-card group">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+              <img 
+                src="assets/fotos/atendimento_domiciliar.jpg" 
+                alt="Atendimento Fisioterapêutico a Domicílio com Dra. Caroline Melo" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 30%;"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Atendimento a Domicílio
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Fisioterapia completa no conforto e na segurança do seu lar. Ideal para pacientes em pós-operatório recente, idosos ou quem possui rotina intensa em Paulista e adjacências.
+                </p>
+              </div>
+              <a href="#triagem" data-select-area="domicilio" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Paulista, Olinda e Região</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Fisioterapia Neurofuncional (TERCEIRO BLOCO) -->
+          <div class="service-card group">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+              <img 
+                src="assets/fotos/neurofuncional_reabilitacao.jpg" 
+                alt="Fisioterapia Neurofuncional e Reabilitação Motora" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 15%;"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia Neurofuncional
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Tratamento e reabilitação de sequelas motoras e neuromusculares (AVC, Doença de Parkinson, neuropatias e traumatismos). Estimulação da neuroplasticidade e do equilíbrio.
+                </p>
+              </div>
+              <a href="#triagem" data-select-area="neurofuncional" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Resgate da autonomia</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Pós-Operatório de Cirurgia Plástica (QUARTO BLOCO) -->
+          <div class="service-card group">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+              <img 
+                src="assets/fotos/pos_operatorio_taping.jpg" 
+                alt="Tratamento no Pós-Operatório com Taping Linfático e Terapia Manual" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 40%;"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Pós-Operatório de Cirurgia Plástica
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Acompanhamento especializado para lipoaspiração, abdominoplastia e mamoplastia. Drenagem linfática manual, ultrassom terapêutico, manejo de fibroses e seromas.
+                </p>
+              </div>
+              <a href="#triagem" data-select-area="pos-operatorio" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Recuperação segura</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 5: Fisioterapia da Pessoa Idosa (QUINTO BLOCO) -->
+          <div class="service-card group">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+              <img 
+                src="assets/fotos/idoso_assistido_barrel.jpg" 
+                alt="Fisioterapia da Pessoa Idosa e Gerontologia Funcional" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 25%;"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia da Pessoa Idosa
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Gerontologia voltada para a longevidade ativa, prevenção de quedas, manutenção da densidade óssea, ganho de força muscular e preservação da independência motora.
+                </p>
+              </div>
+              <a href="#triagem" data-select-area="idoso" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Longevidade & Equilíbrio</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 6: Fisioterapia em Traumato Ortopedia (SEXTO BLOCO) -->
+          <div class="service-card group">
+            <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+              <img 
+                src="assets/fotos/ortopedia_reabilitacao.jpg" 
+                alt="Fisioterapia em Traumato Ortopedia e Alívio da Dor" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 75%;"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia em Traumato Ortopedia
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Reabilitação de lesões articulares, fraturas, tendinites, bursites e dores crônicas na coluna (hérnia de disco e ciatalgia). Alívio da dor e restauração da mobilidade.
+                </p>
+              </div>
+              <a href="#triagem" data-select-area="traumato-ortopedia" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium">Terapia individualizada</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
+                  <span>Agendar</span>
+                  <i class="fas fa-arrow-right group-hover/cta:translate-x-1 transition-transform text-[11px] text-sage"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO: ESTÚDIO DE PILATES NO JANGA (ESTRUTURA & PROPAGANDA EXCLUSIVA) -->
+    <section id="estudio" class="py-20 bg-cream border-t border-sage/15 relative overflow-hidden">
+      <!-- Arabesco Wallpaper Sutil -->
+      <div class="arabesque-wallpaper"></div>
+      <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-sage/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Cabeçalho da Propaganda do Estúdio -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage/15 text-forest text-xs font-bold uppercase tracking-wider border border-sage/30">
+            <i class="fas fa-sparkles text-sage"></i>
+            <span>Estrutura Completa no Janga • Paulista - PE</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest leading-tight">
+            Pilates no Estúdio: Aparelhos Clássicos e Atenção Individualizada
+          </h2>
+          <p class="text-forest/80 text-sm sm:text-base leading-relaxed">
+            Nosso espaço foi cuidadosamente planejado para oferecer uma experiência transformadora. Equipado com a linha completa de aparelhos originais do método Pilates, você treina com segurança, conforto e prescrição direta da <strong>Dra. Caroline Melo</strong>.
+          </p>
+        </div>
+
+        <!-- Vitrine dos 3 Aparelhos Oficiais do Estúdio -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          
+          <!-- Card Cadillac -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-sage/20 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative h-64 sm:h-72 overflow-hidden bg-cream-card">
+              <img 
+                src="assets/fotos/estudio_cadillac_inversao.jpg" 
+                alt="Cadillac de Pilates - Estúdio Dra. Caroline Melo no Janga" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-forest/85 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full border border-white/20">
+                Cadillac
+              </div>
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Cadillac (Trapeze Table)
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Permite exercícios em suspensão, tração suave da coluna vertebral, ganho progressivo de flexibilidade e fortalecimento profundo sem sobrecarga articular.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-semibold">
+                <span>Descompressão & Força</span>
+                <i class="fas fa-check-circle"></i>
               </div>
             </div>
           </div>
 
+          <!-- Card Reformer -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-sage/20 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative h-64 sm:h-72 overflow-hidden bg-cream-card">
+              <img 
+                src="assets/fotos/estudio_reformer_alongamento.jpg" 
+                alt="Reformer de Pilates - Estúdio Dra. Caroline Melo no Janga" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-forest/85 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full border border-white/20">
+                Reformer
+              </div>
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Reformer
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  O aparelho mais versátil do Pilates. Utiliza sistema de molas e carrinho deslizante para alinhamento postural dinâmico, equilíbrio e estabilização de core.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-semibold">
+                <span>Controle & Resistência Gradual</span>
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Ladder Barrel -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-sage/20 flex flex-col hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative h-64 sm:h-72 overflow-hidden bg-cream-card">
+              <img 
+                src="assets/fotos/estudio_barrel_extensao.jpg" 
+                alt="Ladder Barrel de Pilates - Estúdio Dra. Caroline Melo no Janga" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 bg-forest/85 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full border border-white/20">
+                Ladder Barrel
+              </div>
+            </div>
+            <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Ladder Barrel
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 mt-2 leading-relaxed">
+                  Design anatômico em arco acoplado à escada de madeira, perfeito para extensão torácica, descompressão lombar e trabalho de consciência corporal refinado.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-sage font-semibold">
+                <span>Extensão da Coluna & Postura</span>
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner com Diferenciais do Estúdio e CTA para Agendamento de Aula -->
+        <div class="bg-forest rounded-3xl p-7 sm:p-10 text-cream border border-sage/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div class="space-y-3 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-300 uppercase tracking-wider">
+              <i class="fas fa-circle-check"></i>
+              <span>Vagas Limitadas por Horário</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">
+              Quer conhecer nosso estúdio e fazer uma aula experimental?
+            </h3>
+            <p class="text-cream/80 text-xs sm:text-sm max-w-2xl leading-relaxed">
+              Atendimentos com número reduzido de alunos por sessão para garantir correção postural imediata e adaptação para qualquer restrição ou dor. Localizado na Av. Dr. José Cláudio Gueiros Leite, 571 - Janga.
+            </p>
+          </div>
+          <div class="shrink-0 w-full sm:w-auto">
+            <a 
+              href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20agendar%20uma%20aula%20de%20Pilates%20no%20estúdio%20no%20Janga." 
+              target="_blank" 
+              class="btn-primary w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-4 text-sm font-bold shadow-xl hover:scale-105 transition-all min-h-[48px]">
+              <i class="fab fa-whatsapp text-xl"></i>
+              <span>Agendar no Estúdio do Janga</span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -566,7 +762,7 @@
         <div class="text-center space-y-3 mb-12">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/20 border border-sage/30 text-emerald-200 text-xs font-semibold uppercase tracking-wider">
             <i class="fas fa-hand-pointer"></i>
-            <span>Triagem Personalizada</span>
+            <span>Triagem Rápida para seu Atendimento</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
             Descubra a conduta recomendada para o seu caso
@@ -579,6 +775,12 @@
         <!-- Box do Avaliador Interativo -->
         <div class="bg-forest-light/60 backdrop-blur-md rounded-3xl border border-sage/30 p-6 sm:p-10 shadow-2xl">
           
+          <!-- Banner Tranquilizador no Início do Formulário de Triagem -->
+          <div class="mb-6 p-3.5 rounded-xl bg-white/10 border border-emerald-400/30 flex items-center gap-3 text-xs text-cream/90">
+            <i class="fas fa-shield-halved text-emerald-300 text-lg shrink-0"></i>
+            <span><strong>Acesso Direto:</strong> Não é obrigatório possuir encaminhamento médico. Após responder a triagem, você enviará seus dados direto para a Dra. Caroline marcar sua avaliação.</span>
+          </div>
+
           <form id="triage-form" class="space-y-8" onsubmit="return false;">
             
             <!-- Passo 1: Especialidade / Foco -->
@@ -588,13 +790,21 @@
               </label>
               
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="area-options">
-                <button type="button" data-area="pos-operatorio" class="triage-btn active min-h-[52px]">
-                  <i class="fas fa-wand-magic-sparkles text-lg mb-1"></i>
-                  <span>Pós-Operatório Cirurgia Plástica</span>
+                <button type="button" data-area="domicilio" class="triage-btn active min-h-[52px]">
+                  <i class="fas fa-people-group text-lg mb-1"></i>
+                  <span>Pilates em Casa ou em Grupo</span>
+                </button>
+                <button type="button" data-area="pilates" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-dumbbell text-lg mb-1"></i>
+                  <span>Pilates no Estúdio</span>
                 </button>
                 <button type="button" data-area="neurofuncional" class="triage-btn min-h-[52px]">
                   <i class="fas fa-brain text-lg mb-1"></i>
                   <span>Neurofuncional</span>
+                </button>
+                <button type="button" data-area="pos-operatorio" class="triage-btn min-h-[52px]">
+                  <i class="fas fa-wand-magic-sparkles text-lg mb-1"></i>
+                  <span>Pós-Operatório Cirurgia Plástica</span>
                 </button>
                 <button type="button" data-area="idoso" class="triage-btn min-h-[52px]">
                   <i class="fas fa-person-cane text-lg mb-1"></i>
@@ -603,14 +813,6 @@
                 <button type="button" data-area="traumato-ortopedia" class="triage-btn min-h-[52px]">
                   <i class="fas fa-bone text-lg mb-1"></i>
                   <span>Traumato Ortopedia / Dores</span>
-                </button>
-                <button type="button" data-area="domicilio" class="triage-btn min-h-[52px]">
-                  <i class="fas fa-people-group text-lg mb-1"></i>
-                  <span>Pilates em Casa ou em Grupo</span>
-                </button>
-                <button type="button" data-area="pilates" class="triage-btn min-h-[52px]">
-                  <i class="fas fa-dumbbell text-lg mb-1"></i>
-                  <span>Pilates no Estúdio</span>
                 </button>
               </div>
             </div>
@@ -718,12 +920,12 @@
         <!-- Grid de 4 Cards Visuais Temáticos do Instagram -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <!-- Card Instagram 1 (Post 1:1) -->
+          <!-- Card Instagram 1 (Post 1:1 Tamanho Real) -->
           <a href="https://www.instagram.com/p/C9OCQ7iOcys/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative w-full aspect-[4/5] bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_C9OCQ7iOcys.jpg" 
-                alt="Pilates Clínico e Movimento @melscarol" 
+                alt="Pilates e Movimento @melscarol" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -731,20 +933,18 @@
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between text-xs text-sage font-bold">
-                  <span>PILATES CLÍNICO</span>
-                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                </div>
-                <p class="text-xs font-semibold text-forest leading-snug mt-1">Seu corpo é seu maior bem: fortalecimento, controle e alinhamento no Reformer.</p>
+            <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+              <p class="text-xs text-forest/85 leading-snug">Seu corpo é seu maior bem: fortalecimento, controle e alinhamento no Reformer.</p>
+              <div class="flex items-center justify-between text-xs text-sage font-medium pt-2 border-t border-sage/10">
+                <span class="flex items-center gap-1.5"><i class="fab fa-instagram"></i> Ver no Instagram</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
               </div>
             </div>
           </a>
 
-          <!-- Card Instagram 2 (Post 4:5 vertical) -->
+          <!-- Card Instagram 2 (Post 1:1 Tamanho Real) -->
           <a href="https://www.instagram.com/p/DEyKcjrRcqr/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative w-full aspect-[4/5] bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_DEyKcjrRcqr.jpg" 
                 alt="Estúdio Dra. Caroline Melo e Prática de Pilates @melscarol" 
@@ -755,20 +955,18 @@
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between text-xs text-sage font-bold">
-                  <span>ESTÚDIO & MOVIMENTO</span>
-                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                </div>
-                <p class="text-xs font-semibold text-forest leading-snug mt-1">Novos desafios e evolução constante para o seu corpo através do método Pilates.</p>
+            <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+              <p class="text-xs text-forest/85 leading-snug">Novos desafios e evolução constante para o seu corpo através do método Pilates.</p>
+              <div class="flex items-center justify-between text-xs text-sage font-medium pt-2 border-t border-sage/10">
+                <span class="flex items-center gap-1.5"><i class="fab fa-instagram"></i> Ver no Instagram</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
               </div>
             </div>
           </a>
 
-          <!-- Card Instagram 3 (Post 1:1) -->
+          <!-- Card Instagram 3 (Post 1:1 Tamanho Real) -->
           <a href="https://www.instagram.com/p/DBKauLnOpoU/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative w-full aspect-[4/5] bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
                 src="insta_DBKauLnOpoU.jpg" 
                 alt="Postura e Consciência Corporal no Pilates @melscarol" 
@@ -779,46 +977,42 @@
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
             </div>
-            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between text-xs text-sage font-bold">
-                  <span>POSTURA & CONSCIÊNCIA</span>
-                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                </div>
-                <p class="text-xs font-semibold text-forest leading-snug mt-1">"Cresce a coluna, fecha a escápula": o corpo alcança o que a mente acredita.</p>
+            <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+              <p class="text-xs text-forest/85 leading-snug">"Cresce a coluna, fecha a escápula": o corpo alcança o que a mente acredita.</p>
+              <div class="flex items-center justify-between text-xs text-sage font-medium pt-2 border-t border-sage/10">
+                <span class="flex items-center gap-1.5"><i class="fab fa-instagram"></i> Ver no Instagram</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
               </div>
             </div>
           </a>
 
-          <!-- Card Instagram 4 (Reel Vertical 9:16 nativo do Instagram) -->
-          <a href="https://www.instagram.com/reel/DNB-hMxxRWD/" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="relative w-full aspect-[4/5] bg-[#1a2118] flex items-center justify-center overflow-hidden">
+          <!-- Card Instagram 4 (Reel Grupo Pilates) -->
+          <a href="https://www.instagram.com/reel/Dc9UUIHpYNt/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="group flex flex-col bg-cream rounded-2xl overflow-hidden border border-sage/20 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="relative w-full aspect-square bg-[#EAE5D5] flex items-center justify-center overflow-hidden">
               <img 
-                src="insta_DNB-hMxxRWD.jpg" 
-                alt="Exercício no Ladder Barrel @melscarol" 
-                class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                src="assets/fotos/insta_grupo_pilates.jpg" 
+                alt="Prática de Pilates em Grupo @melscarol" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                style="object-position: center 68%;"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-forest/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                 <i class="fab fa-instagram text-3xl"></i>
               </div>
               <!-- Badge Indicativo de Reel Original -->
-              <div class="absolute top-2.5 right-2.5 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1">
+              <div class="absolute top-2.5 right-2.5 bg-black/60 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-sm flex items-center gap-1.5 border border-white/20">
                 <i class="fas fa-play text-[8px]"></i>
-                <span>Reel 9:16</span>
+                <span>Reel</span>
               </div>
             </div>
-            <div class="p-4 space-y-1.5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between text-xs text-sage font-bold">
-                  <span>PILATES NO BARREL</span>
-                  <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
-                </div>
-                <p class="text-xs font-semibold text-forest leading-snug mt-1">A arte do controle corporal, flexibilidade e extensão da coluna no Barrel.</p>
+            <div class="p-4 space-y-2 flex-1 flex flex-col justify-between">
+              <p class="text-xs text-forest/85 leading-snug">Conexão, movimento e bem-estar: práticas e vivências de Pilates em grupo.</p>
+              <div class="flex items-center justify-between text-xs text-sage font-medium pt-2 border-t border-sage/10">
+                <span class="flex items-center gap-1.5"><i class="fab fa-instagram"></i> Ver Reel no Instagram</span>
+                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
               </div>
             </div>
           </a>
-
         </div>
 
       </div>
@@ -834,10 +1028,10 @@
             <span>Localização & Atendimento</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
-            Onde encontrar a Dra. Caroline Melo
+            Onde Estamos & Como Agendar
           </h2>
           <p class="text-forest/75 text-sm sm:text-base">
-            No estúdio no Janga ou com agendamento direto na sua casa em Paulista, Olinda e região.
+            Visite nosso estúdio no Janga ou solicite atendimento fisioterapêutico domiciliar em Paulista, Olinda e região metropolitana.
           </p>
         </div>
 
@@ -968,6 +1162,76 @@
       </div>
     </section>
 
+    <!-- SEÇÃO: PERGUNTAS FREQUENTES & QUEBRA DE DÚVIDAS -->
+    <section id="faq" class="py-20 bg-cream-card border-t border-sage/15">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
+            <i class="fas fa-circle-question text-sage"></i>
+            <span>Dúvidas Frequentes</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
+            Tudo o que você precisa saber antes de agendar
+          </h2>
+          <p class="text-forest/75 text-sm sm:text-base">
+            Esclareça as dúvidas mais comuns sobre o atendimento, autonomia profissional e agendamento.
+          </p>
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="space-y-4">
+          
+          <!-- Item 1 -->
+          <div class="bg-cream rounded-2xl border border-sage/20 overflow-hidden shadow-sm transition-all duration-200">
+            <button class="faq-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-bold text-forest">
+              <span>Preciso de encaminhamento ou pedido médico para me consultar?</span>
+              <i class="fas fa-chevron-down text-sage text-sm transition-transform duration-300 shrink-0"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-forest/80 leading-relaxed border-t border-sage/10 pt-4">
+              <strong>Não!</strong> De acordo com a legislação federal (Decreto-Lei nº 938/69) e resoluções do Conselho Federal de Fisioterapia (<strong>COFFITO</strong> nº 80/1987 e 555/2022), ratificadas por decisão do <strong>STJ</strong>, o fisioterapeuta é um profissional de <strong>primeiro contato (acesso direto)</strong>. Isso significa que você pode procurar a Dra. Caroline Melo diretamente. Ela possui total competência técnica e legal para avaliar, formular o diagnóstico cinético-funcional e prescrever o tratamento adequado sem burocracias.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-cream rounded-2xl border border-sage/20 overflow-hidden shadow-sm transition-all duration-200">
+            <button class="faq-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-bold text-forest">
+              <span>Como funciona o atendimento a domicílio? A Dra. Caroline leva os aparelhos?</span>
+              <i class="fas fa-chevron-down text-sage text-sm transition-transform duration-300 shrink-0"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-forest/80 leading-relaxed border-t border-sage/10 pt-4">
+              <strong>Sim!</strong> Para atendimentos domiciliares em Paulista, Olinda e região, a Dra. Caroline leva todos os equipamentos e recursos terapêuticos necessários (como ultrassom terapêutico, kit de ventosaterapia e liberação miofascial, materiais de cinesioterapia e taping). Você tem o mesmo padrão de excelência clínica e conforto no seu próprio lar.
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-cream rounded-2xl border border-sage/20 overflow-hidden shadow-sm transition-all duration-200">
+            <button class="faq-trigger w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-bold text-forest">
+              <span>E se eu não tiver exames de imagem recentes (raio-X ou ressonância)?</span>
+              <i class="fas fa-chevron-down text-sage text-sm transition-transform duration-300 shrink-0"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-forest/80 leading-relaxed border-t border-sage/10 pt-4">
+              Você pode agendar normalmente! A maioria das dores e disfunções musculoesqueléticas pode ser avaliada clinicamente com precisão através de testes ortopédicos, palpação anatômica e análise funcional do movimento. Caso haja necessidade de exames complementares durante a consulta, a Dra. Caroline indicará com total transparência e segurança médica.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Box Chamativo de Suporte Direto -->
+        <div class="mt-10 p-6 rounded-2xl bg-cream border border-sage/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h4 class="font-serif text-base font-bold text-forest">Ficou com alguma dúvida específica sobre o seu caso?</h4>
+            <p class="text-xs text-forest/75 mt-0.5">Converse diretamente com a Dra. Caroline pelo WhatsApp sem nenhum compromisso.</p>
+          </div>
+          <a href="https://wa.me/5581988345003?text=Olá,%20Dra.%20Caroline!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20meu%20atendimento." target="_blank" class="btn-primary shrink-0 flex items-center gap-2 text-xs sm:text-sm min-h-[44px]">
+            <i class="fab fa-whatsapp text-base"></i>
+            <span>Tirar Dúvida no WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- BANNER FINAL DE AÇÃO (CTA) -->
     <section class="py-16 bg-gradient-to-r from-forest via-forest-light to-forest text-cream text-center relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-6">
@@ -1002,21 +1266,19 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 text-xs text-cream/80">
+        <div class="flex flex-wrap justify-center gap-5 sm:gap-6 text-xs text-cream/80">
           <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
           <a href="#especialidades" class="hover:text-white transition-colors">Especialidades</a>
-          <a href="#triagem" class="hover:text-white transition-colors">Avaliador de Queixas</a>
-          <a href="#instagram-feed" class="hover:text-white transition-colors">Instagram</a>
+          <a href="#estudio" class="hover:text-white transition-colors">Estúdio Pilates</a>
+          <a href="#triagem" class="hover:text-white transition-colors">Triagem Rápida</a>
           <a href="anamnese.html" class="hover:text-white transition-colors">Anamnese</a>
+          <a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a>
           <a href="#localizacao" class="hover:text-white transition-colors">Localização</a>
         </div>
 
         <div class="flex items-center gap-3">
           <a href="https://wa.me/5581988345003" target="_blank" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/10 hover:bg-sage text-white flex items-center justify-center transition-colors text-base">
             <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://instagram.com/melscarol" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-sage text-white flex items-center justify-center transition-colors text-base">
-            <i class="fab fa-instagram"></i>
           </a>
         </div>
       </div>

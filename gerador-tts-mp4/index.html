@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estúdio de Voz Neural TTS (.mp3)</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- PDF.js para extração de texto de PDFs direto no navegador -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #0d1527 100%);
+      --card-bg: rgba(26, 34, 52, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(59, 130, 246, 0.5);
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #10b981;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --surface-inner: #151d2e;
+      --danger: #ef4444;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 940px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Cabeçalho */
+    header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: border-color 0.2s ease;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title span.icon {
+      font-size: 20px;
+    }
+
+    /* Área de Drop de Arquivo */
+    .dropzone {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.2s ease;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .dropzone:hover, .dropzone.dragover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .dropzone-icon {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .dropzone-text {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .dropzone-text strong {
+      color: var(--text-main);
+    }
+
+    .dropzone-formats {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    /* Barra de Otimização Inteligente e Filtros */
+    .clean-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+
+    .clean-toggles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .clean-toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #a7f3d0;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 500;
+    }
+
+    .clean-toggle-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .clean-toolbar-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(16, 185, 129, 0.15);
+    }
+
+    .topic-mode-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .topic-mode-group select {
+      background: #0f172a;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #e2e8f0;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .btn-clean-now {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #a7f3d0;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-clean-now:hover {
+      background: rgba(16, 185, 129, 0.35);
+      color: #fff;
+    }
+
+    .btn-load-sample {
+      background: transparent;
+      border: 1px dashed var(--card-border);
+      color: var(--text-dim);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-load-sample:hover {
+      color: var(--text-muted);
+      border-color: var(--text-muted);
+    }
+
+    /* Área de Texto */
+    .textarea-wrapper {
+      position: relative;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      max-height: 500px;
+      background: var(--surface-inner);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-main);
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .text-stats {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 8px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Configurações (Voz, Velocidade) */
+    .grid-settings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .grid-settings {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    label span.val-label {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    select {
+      background: var(--surface-inner);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    select:focus {
+      border-color: var(--primary);
+    }
+
+    select optgroup {
+      background: #0f172a;
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    select option {
+      background: #111827;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    input[type="range"] {
+      flex: 1;
+      height: 6px;
+      background: #374151;
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    /* Botão Principal */
+    .btn-action {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+
+    .btn-action:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      filter: grayscale(0.5);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Card de Resultado */
+    .result-card {
+      display: none;
+      border-color: rgba(16, 185, 129, 0.3);
+      background: linear-gradient(180deg, rgba(26, 34, 52, 0.9) 0%, rgba(16, 185, 129, 0.05) 100%);
+    }
+
+    .result-card.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .speed-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .audio-player-wrapper {
+      margin: 16px 0;
+    }
+
+    audio {
+      width: 100%;
+      border-radius: var(--radius-md);
+      outline: none;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-download-mp3 {
+      flex: 1;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-download-mp3:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+
+    .file-meta-tag {
+      font-size: 12px;
+      color: #34d399;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    details.cleaned-preview {
+      margin-top: 14px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    details.cleaned-preview summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #93c5fd;
+      outline: none;
+    }
+
+    details.cleaned-preview pre {
+      margin-top: 8px;
+      white-space: pre-wrap;
+      font-family: inherit;
+      line-height: 1.5;
+      color: var(--text-main);
+    }
+
+    .error-box {
+      display: none;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: #fca5a5;
+      font-size: 14px;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .error-box.active {
+      display: flex;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Cabeçalho -->
+    <header>
+      <div class="badge-pill">
+        ⚡ Execução 100% Local no Mac (.mp3)
+      </div>
+      <h1>Estúdio de Voz TTS (.mp3)</h1>
+      <p class="subtitle">
+        Transcrição para áudio <strong>.mp3</strong> ultrarrápida. Limpeza de resíduos de PDF (cortes, citações), desrobotização de abreviações e sotaque natural em termos em inglês.
+      </p>
+    </header>
+
+    <!-- Card 1: Entrada do Documento / Texto -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="icon">📄</span> Documento ou Texto
+        </div>
+        <button type="button" class="btn-load-sample" id="btnLoadSample" title="Preencher com um exemplo acadêmico/clínico com citações, termos em inglês e abreviações">
+          Carregar Exemplo Clínico / Acadêmico
+        </button>
+      </div>
+
+      <!-- Drag & Drop Zone -->
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".txt,.pdf,.md,.doc,.docx">
+        <div class="dropzone-icon">📥</div>
+        <div class="dropzone-text">
+          <strong>Clique para selecionar um documento</strong> ou arraste o arquivo aqui
+        </div>
+        <div class="dropzone-formats">Suporta documentos PDF (.pdf), Texto (.txt) e Markdown (.md)</div>
+      </div>
+
+      <!-- Barra de Otimização e Filtros Avançados -->
+      <div class="clean-toolbar">
+        <div class="clean-toggles-grid">
+          <label class="clean-toggle-label">
+            <input type="checkbox" id="cleanPdfToggle" checked>
+            <span>🧹 <strong>Filtro de Resíduos de PDF:</strong> Remove citações [1, 2], cabeçalhos, rodapés e cortes (ex: enfermari…)</span>
+          </label>
+          <label class="clean-toggle-label">
+            <input type="checkbox" id="derobotizeToggle" checked>
+            <span>🗣️ <strong>Desrobotização:</strong> Expande Dr., Dra., etc., pág., medidas (120x80 mmHg, 500mg, 8h) e ordinais</span>
+          </label>
+          <label class="clean-toggle-label">
+            <input type="checkbox" id="englishPhoneticsToggle" checked>
+            <span>🇬🇧 <strong>Sotaque Natural em Inglês:</strong> Pronúncia correta de feedback, workshop, design, machine learning...</span>
+          </label>
+          <label class="clean-toggle-label">
+            <input type="checkbox" id="autoCleanToggle" checked>
+            <span>⏸️ <strong>Pausas em Parênteses:</strong> Respiração natural antes e depois de observações (...)</span>
+          </label>
+        </div>
+
+        <div class="clean-toolbar-bottom">
+          <div class="topic-mode-group">
+            <span style="font-weight: 500; color: #cbd5e1;">📢 Anúncio de Tópicos e Subtópicos:</span>
+            <select id="topicModeSelect">
+              <option value="formal" selected>🌟 Formal: "Tópico 1:", "Subtópico 1 ponto 2:", "Item A:" (Recomendado)</option>
+              <option value="direct">🔢 Direto: "1:", "1 ponto 2:", "A:"</option>
+              <option value="none">🔇 Apenas Pausa (sem anunciar prefixo)</option>
+            </select>
+          </div>
+          <button type="button" class="btn-clean-now" id="btnCleanNow" title="Aplica todos os filtros e atualiza o texto abaixo imediatamente para sua revisão">
+            🧹 Limpar e Organizar Agora
+          </button>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="textarea-wrapper">
+        <textarea id="textInput" placeholder="Digite, cole o texto ou arraste um documento acima..." spellcheck="false"></textarea>
+      </div>
+
+      <div class="text-stats">
+        <span>Caracteres: <strong id="charCount">0</strong></span>
+        <span>Palavras: <strong id="wordCount">0</strong></span>
+        <span>Duração estimada: <strong id="timeEst">0s</strong></span>
+      </div>
+    </div>
+
+    <!-- Card 2: Configurações de Voz -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="icon">🎙️</span> Motor de Voz e Ajustes
+        </div>
+      </div>
+
+      <div class="grid-settings">
+        <!-- Voz -->
+        <div class="field-group">
+          <label for="voiceSelect">Voz e Modo de Execução</label>
+          <select id="voiceSelect">
+            <optgroup label="⚡ LOCAL NO MAC (Ultra Rápido &amp; Offline)">
+              <option value="local:piper:faber" selected>⚡ Faber (Brasil) — Neural Local (Rápido &amp; Natural)</option>
+              <option value="local:mac:Luciana">🍏 Luciana (Brasil) — Apple Nativa (Instantânea)</option>
+              <option value="local:mac:Joana">🍏 Joana (Portugal) — Apple Nativa</option>
+              <option value="local:mac:Eddy">🍏 Eddy (Brasil) — Apple Nativa</option>
+            </optgroup>
+            <optgroup label="☁️ NUVEM (Requer Conexão)">
+              <option value="cloud:pt-BR-FranciscaNeural">☁️ Francisca (Brasil) — Nuvem Estúdio</option>
+              <option value="cloud:pt-BR-AntonioNeural">☁️ Antônio (Brasil) — Nuvem Estúdio</option>
+              <option value="cloud:pt-BR-ThalitaNeural">☁️ Thalita (Brasil) — Nuvem Estúdio</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Velocidade -->
+        <div class="field-group">
+          <label>
+            <span>Velocidade da Fala</span>
+            <span class="val-label" id="rateVal">1.0x</span>
+          </label>
+          <div class="slider-container">
+            <input type="range" id="rateRange" min="-40" max="50" value="0" step="5">
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <button id="btnGenerate" class="btn-action">
+          <span id="btnIcon">⚡</span>
+          <span id="btnText">Gerar Áudio em .mp3 (Local Instantâneo)</span>
+        </button>
+      </div>
+
+      <!-- Erro -->
+      <div class="error-box" id="errorBox" style="margin-top: 16px;">
+        <span>⚠️</span>
+        <span id="errorMsg">Ocorreu um erro ao processar.</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Resultado / Player & Download -->
+    <div class="card result-card" id="resultCard">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="icon">✅</span> Áudio Gerado com Sucesso!
+        </div>
+      </div>
+
+      <div class="speed-badge" id="speedBadge">
+        ⚡ Transcrito localmente em 0.8s!
+      </div>
+
+      <div class="file-meta-tag">
+        <span>✨ Formato: <strong>Áudio MP3 (192 kbps Alta Resolução)</strong></span>
+        <span style="color: var(--text-dim); margin: 0 4px;">•</span>
+        <span id="fileSizeDisplay">Tamanho: calculando...</span>
+      </div>
+
+      <div class="audio-player-wrapper">
+        <audio id="audioPlayer" controls></audio>
+      </div>
+
+      <div class="download-buttons">
+        <a id="btnDownloadMp3" href="#" download class="btn-download-mp3">
+          <span>⬇️</span> Baixar Áudio (.mp3)
+        </a>
+      </div>
+
+      <details class="cleaned-preview">
+        <summary>👁️ Ver texto final tratado (leitura desrobotizada e sem resíduos)</summary>
+        <pre id="cleanedTextContent"></pre>
+      </details>
+    </div>
+
+    <footer>
+      Processamento de fala local acelerado por hardware via Apple CoreAudio, Piper Neural &amp; Lame MP3.
+    </footer>
+
+  </div>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+    const timeEst = document.getElementById('timeEst');
+
+    const fileInput = document.getElementById('fileInput');
+    const dropzone = document.getElementById('dropzone');
+    
+    // Toggles de Limpeza Avançada
+    const cleanPdfToggle = document.getElementById('cleanPdfToggle');
+    const derobotizeToggle = document.getElementById('derobotizeToggle');
+    const englishPhoneticsToggle = document.getElementById('englishPhoneticsToggle');
+    const autoCleanToggle = document.getElementById('autoCleanToggle');
+    const topicModeSelect = document.getElementById('topicModeSelect');
+    
+    const btnCleanNow = document.getElementById('btnCleanNow');
+    const btnLoadSample = document.getElementById('btnLoadSample');
+
+    const voiceSelect = document.getElementById('voiceSelect');
+    const rateRange = document.getElementById('rateRange');
+    const rateVal = document.getElementById('rateVal');
+
+    const btnGenerate = document.getElementById('btnGenerate');
+    const btnIcon = document.getElementById('btnIcon');
+    const btnText = document.getElementById('btnText');
+
+    const errorBox = document.getElementById('errorBox');
+    const errorMsg = document.getElementById('errorMsg');
+
+    const resultCard = document.getElementById('resultCard');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const btnDownloadMp3 = document.getElementById('btnDownloadMp3');
+    const fileSizeDisplay = document.getElementById('fileSizeDisplay');
+    const speedBadge = document.getElementById('speedBadge');
+    const cleanedTextContent = document.getElementById('cleanedTextContent');
+
+    function updateStats() {
+      const text = textInput.value;
+      const chars = text.length;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+
+      const rateFactor = 1 + (parseInt(rateRange.value) / 100);
+      const seconds = Math.round((words / (130 * rateFactor)) * 60);
+
+      charCount.textContent = chars.toLocaleString('pt-BR');
+      wordCount.textContent = words.toLocaleString('pt-BR');
+
+      if (seconds < 60) {
+        timeEst.textContent = `${seconds}s`;
+      } else {
+        const mins = Math.floor(seconds / 60);
+        const remSecs = seconds % 60;
+        timeEst.textContent = `${mins}m ${remSecs}s`;
+      }
+    }
+
+    textInput.addEventListener('input', updateStats);
+
+    rateRange.addEventListener('input', () => {
+      const v = parseInt(rateRange.value);
+      const factor = (1 + v / 100).toFixed(2);
+      rateVal.textContent = `${factor}x`;
+      updateStats();
+    });
+
+    // Limpeza Inteligente e Anúncio de Tópicos
+    btnCleanNow.addEventListener('click', async () => {
+      const text = textInput.value.trim();
+      if (!text) {
+        showError(true, 'Digite ou cole um texto primeiro para organizar.');
+        return;
+      }
+      showError(false);
+      btnCleanNow.textContent = '⏳ Desrobotizando e filtrando...';
+
+      try {
+        const res = await fetch('/api/clean-text', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            text: text,
+            topic_mode: topicModeSelect.value,
+            clean_pdf: cleanPdfToggle.checked,
+            derobotize: derobotizeToggle.checked,
+            english_phonetics: englishPhoneticsToggle.checked
+          })
+        });
+        const data = await res.json();
+        if (data.cleaned_text) {
+          textInput.value = data.cleaned_text;
+          updateStats();
+          btnCleanNow.textContent = '✅ Texto Limpo e Desrobotizado!';
+          setTimeout(() => { btnCleanNow.textContent = '🧹 Limpar e Organizar Agora'; }, 2200);
+        }
+      } catch (err) {
+        btnCleanNow.textContent = '🧹 Limpar e Organizar Agora';
+        showError(true, 'Erro ao organizar texto: ' + err.message);
+      }
+    });
+
+    // Carregar Exemplo Rico
+    btnLoadSample.addEventListener('click', () => {
+      textInput.value = `# 1. Avaliação Clínica e Abordagem de Enfermagem
+A assistência de enfermagem em UTI é vital para a sobrevida do paciente crítico [1, 2, 4-6].
+Segundo Almeida et al. (2021), a intervenção precoce baseada em evidências (evidence-based nursing care)
+reduz o tempo de internação em até 48h (SILVA; SANTOS, 2020).
+
+avaliacao abordagem enfermari…
+
+## 1.1 Metodologia e Cuidados no Plantão
+O Dr. Silva e a Dra. Mariana realizaram o check-up no 1º andar.
+A pressão aferida foi 120x80 mmHg, administrando 500mg de analgésico a cada 8h.
+O workshop de machine learning e o feedback da equipe foram discutidos na pág. 12 do relatório (aprovado pela coordenação).
+
+No século XXI, o protocolo demonstrou eficácia superior (ex.: redução de infecções hospitalares, etc.).
+
+Como citar este artigo: Silva AB, et al. Rev Enferm. 2022; 30:e1234.
+DOI: https://doi.org/10.1590/0034-7167-2021-0123`;
+      updateStats();
+    });
+
+    // Upload & Leitura de Documentos
+    fileInput.addEventListener('change', handleFile);
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('dragover');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (e.dataTransfer.files.length > 0) {
+        processFile(e.dataTransfer.files[0]);
+      }
+    });
+
+    function handleFile(e) {
+      if (e.target.files.length > 0) {
+        processFile(e.target.files[0]);
+      }
+    }
+
+    async function processFile(file) {
+      const fileName = file.name.toLowerCase();
+      showError(false);
+
+      if (fileName.endsWith('.txt') || fileName.endsWith('.md')) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          textInput.value = e.target.result;
+          updateStats();
+        };
+        reader.readAsText(file);
+      } else if (fileName.endsWith('.pdf')) {
+        if (!window.pdfjsLib) {
+          showError(true, 'Leitor de PDF carregando... Tente novamente em 2 segundos.');
+          return;
+        }
+        btnText.textContent = 'Extraindo texto do PDF...';
+        btnGenerate.disabled = true;
+
+        try {
+          const arrayBuffer = await file.arrayBuffer();
+          const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+          let fullText = '';
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const textContent = await page.getTextContent();
+            const pageText = textContent.items.map(item => item.str).join(' ');
+            fullText += pageText + '\n\n';
+          }
+          textInput.value = fullText.trim();
+          updateStats();
+        } catch (err) {
+          showError(true, 'Erro ao ler arquivo PDF: ' + err.message);
+        } finally {
+          btnText.textContent = 'Gerar Áudio em .mp3 (Local Instantâneo)';
+          btnGenerate.disabled = false;
+        }
+      } else {
+        showError(true, 'Formato não suportado diretamente. Envie arquivos .pdf, .txt ou .md, ou cole o texto diretamente.');
+      }
+    }
+
+    function showError(show, msg = '') {
+      if (show) {
+        errorMsg.textContent = msg;
+        errorBox.classList.add('active');
+      } else {
+        errorBox.classList.remove('active');
+      }
+    }
+
+    // Ação: Gerar Áudio
+    btnGenerate.addEventListener('click', async () => {
+      const text = textInput.value.trim();
+      if (!text) {
+        showError(true, 'Por favor, digite ou envie um documento com texto para ser lido.');
+        textInput.focus();
+        return;
+      }
+
+      showError(false);
+      btnGenerate.disabled = true;
+      btnIcon.innerHTML = '<span class="spinner"></span>';
+      btnText.textContent = 'Gerando áudio MP3 no Mac...';
+
+      const rateValNum = parseInt(rateRange.value);
+      const rateStr = `${rateValNum}%`;
+
+      const payload = {
+        text: text,
+        voice: voiceSelect.value,
+        rate: rateStr,
+        auto_clean: autoCleanToggle.checked,
+        topic_mode: topicModeSelect.value,
+        clean_pdf: cleanPdfToggle.checked,
+        derobotize: derobotizeToggle.checked,
+        english_phonetics: englishPhoneticsToggle.checked
+      };
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || data.error) {
+          throw new Error(data.error || 'Erro na resposta do servidor.');
+        }
+
+        const mp3Url = data.mp3_url + '?t=' + Date.now();
+
+        audioPlayer.src = mp3Url;
+        audioPlayer.load();
+
+        btnDownloadMp3.href = mp3Url;
+        btnDownloadMp3.download = data.filename_mp3;
+
+        const sizeKb = (data.size_bytes / 1024).toFixed(1);
+        fileSizeDisplay.textContent = `Tamanho: ${sizeKb} KB`;
+
+        speedBadge.textContent = `⚡ Processado em apenas ${data.elapsed_seconds}s via ${data.engine}!`;
+
+        cleanedTextContent.textContent = data.cleaned_text || text;
+
+        resultCard.classList.add('active');
+        resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      } catch (err) {
+        showError(true, 'Erro ao sintetizar voz: ' + err.message);
+      } finally {
+        btnGenerate.disabled = false;
+        btnIcon.innerHTML = '⚡';
+        btnText.textContent = 'Gerar Áudio em .mp3 (Local Instantâneo)';
+      }
+    });
+
+    updateStats();
+  </script>
+</body>
+</html>

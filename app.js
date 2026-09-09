@@ -141,7 +141,7 @@ function initFaqAccordion() {
 // ==========================================
 // 4. LÓGICA DO AVALIADOR DE QUEIXAS (TRIAGEM)
 // ==========================================
-let currentSelectedArea = "pos-operatorio";
+let currentSelectedArea = "domicilio";
 let currentSelectedTime = "pouco";
 
 function initTriageEngine() {
@@ -175,6 +175,18 @@ function initTriageEngine() {
       renderTriageResult();
     });
   }
+
+  // Links dos Cards de Especialidades (acionam a triagem automaticamente)
+  const specialtyLinks = document.querySelectorAll("[data-select-area]");
+  specialtyLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const area = link.getAttribute("data-select-area");
+      const targetBtn = document.querySelector(`#area-options .triage-btn[data-area="${area}"]`);
+      if (targetBtn) {
+        targetBtn.click();
+      }
+    });
+  });
 
   // Render inicial
   renderTriageResult();
