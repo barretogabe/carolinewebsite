@@ -139,15 +139,45 @@ function initFaqAccordion() {
 }
 
 // ==========================================
-// 4. LÓGICA DO AVALIADOR DE QUEIXAS (TRIAGEM)
+// 4. LÓGICA DO AVALIADOR DE QUEIXAS & PRÉ-AVALIAÇÃO (TRIAGEM + ANAMNESE)
 // ==========================================
 let currentSelectedArea = "domicilio";
 let currentSelectedTime = "pouco";
+let currentPainLevel = 0;
+
+const PAIN_LABELS = {
+  0: "0/10 • Sem dor (Prevenção / Pilates)",
+  1: "1/10 • Desconforto muito leve",
+  2: "2/10 • Desconforto leve",
+  3: "3/10 • Dor leve a moderada",
+  4: "4/10 • Dor moderada",
+  5: "5/10 • Dor moderada marcante",
+  6: "6/10 • Dor persistente / incômoda",
+  7: "7/10 • Dor intensa",
+  8: "8/10 • Dor muito intensa",
+  9: "9/10 • Dor severa / quase insuportável",
+  10: "10/10 • Dor máxima / insuportável"
+};
+
+function getPainBadgeColor(level) {
+  if (level === 0) return "bg-emerald-500/20 text-emerald-300 border-emerald-400/30";
+  if (level <= 3) return "bg-emerald-600/25 text-emerald-200 border-emerald-500/40";
+  if (level <= 6) return "bg-amber-500/25 text-amber-200 border-amber-400/40";
+  if (level <= 8) return "bg-orange-500/25 text-orange-200 border-orange-400/40";
+  return "bg-rose-500/25 text-rose-200 border-rose-400/40";
+}
 
 function initTriageEngine() {
   const areaButtons = document.querySelectorAll("#area-options .triage-btn");
   const timeButtons = document.querySelectorAll("#time-options .triage-time-btn");
+  const painSlider = document.getElementById("pain-slider");
+  const painButtons = document.querySelectorAll("#pain-buttons-container .pain-scale-btn");
+  const painBadge = document.getElementById("pain-badge");
+  const nameInput = document.getElementById("user-name");
+  const phoneInput = document.getElementById("user-phone");
   const notesInput = document.getElementById("user-notes");
+  const historyInput = document.getElementById("user-history");
+  const whatsappBtn = document.getElementById("whatsapp-triage-btn");
 
   // Botões de Área
   areaButtons.forEach(btn => {
@@ -169,10 +199,73 @@ function initTriageEngine() {
     });
   });
 
-  // Input de Observação
-  if (notesInput) {
-    notesInput.addEventListener("input", () => {
-      renderTriageResult();
+  // Slider de Rolagem de Dor (EVA 0 a 10)
+  if (painSlider) {
+    painSlider.addEventListener("input", (e) => {
+      const val = parseInt(e.target.value, 10);
+      setPainLevel(val);
+    });
+  }
+
+  // Botões Numéricos da Escala de Dor
+  painButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const val = parseInt(btn.getAttribute("data-pain"), 10);
+      setPainLevel(val);
+    });
+  });
+
+  function setPainLevel(val) {
+    currentPainLevel = val;
+    if (painSlider) painSlider.value = val;
+    
+    // Atualiza botões
+    painButtons.forEach(btn => {
+      const bVal = parseInt(btn.getAttribute("data-pain"), 10);
+      if (bVal === val) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    // Atualiza badge de dor
+    if (painBadge) {
+      painBadge.textContent = PAIN_LABELS[val] || `${val}/10`;
+      painBadge.className = `px-3 py-1 rounded-full text-xs font-bold border transition-colors ${getPainBadgeColor(val)}`;
+    }
+
+    renderTriageResult();
+  }
+
+  // Inputs de Texto
+  [nameInput, phoneInput, notesInput, historyInput].forEach(inp => {
+    if (inp) {
+      inp.addEventListener("input", () => {
+        renderTriageResult();
+      });
+    }
+  });
+
+  // Botão de Envio para WhatsApp com validação humanizada
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener("click", () => {
+      const name = nameInput ? nameInput.value.trim() : "";
+      
+      if (!name) {
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.classList.add("ring-2", "ring-emerald-400", "border-emerald-400");
+          setTimeout(() => {
+            nameInput.classList.remove("ring-2", "ring-emerald-400");
+          }, 2500);
+        }
+        alert("Por favor, digite seu nome completo acima para que a Dra. Caroline possa te atender pessoalmente.");
+        return;
+      }
+
+      const whatsappUrl = generateWhatsAppTriageUrl();
+      window.open(whatsappUrl, "_blank");
     });
   }
 
@@ -192,36 +285,54 @@ function initTriageEngine() {
   renderTriageResult();
 }
 
+function generateWhatsAppTriageUrl() {
+  const data = TRIAGE_DATA[currentSelectedArea] || TRIAGE_DATA["domicilio"];
+  const timeLabel = TIME_LABELS[currentSelectedTime] || "fase inicial";
+  const nameInput = document.getElementById("user-name");
+  const phoneInput = document.getElementById("user-phone");
+  const notesInput = document.getElementById("user-notes");
+  const historyInput = document.getElementById("user-history");
+
+  const name = nameInput ? nameInput.value.trim() : "";
+  const phone = phoneInput ? phoneInput.value.trim() : "";
+  const notes = notesInput ? notesInput.value.trim() : "";
+  const history = historyInput ? historyInput.value.trim() : "";
+  const painLabel = PAIN_LABELS[currentPainLevel] || `${currentPainLevel}/10`;
+
+  let message = `📋 *TRIAGEM RÁPIDA & PRÉ-AVALIAÇÃO*\n`;
+  message += `_Dra. Caroline Melo • Fisioterapia & Pilates (CREFITO 315194-F)_\n\n`;
+  
+  if (name) {
+    message += `👤 *Paciente:* ${name}\n`;
+  }
+  if (phone) {
+    message += `📱 *WhatsApp/Contato:* ${phone}\n`;
+  }
+  message += `🎯 *Especialidade / Foco:* ${data.whatsappTag}\n`;
+  message += `⏱️ *Tempo / Fase:* ${timeLabel}\n`;
+  message += `⚡ *Nível de Dor/Desconforto:* ${painLabel}\n`;
+
+  if (notes) {
+    message += `\n🩺 *Queixa Principal / Objetivo:*\n"${notes}"\n`;
+  }
+  if (history) {
+    message += `🏥 *Histórico / Cirurgia Prévia:*\n"${history}"\n`;
+  }
+
+  message += `\nOlá, Dra. Caroline! Preenchi minhas informações na triagem do site e gostaria de agendar uma avaliação.`;
+
+  return `https://wa.me/${CLINIC_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
 function renderTriageResult() {
-  const data = TRIAGE_DATA[currentSelectedArea] || TRIAGE_DATA["pos-operatorio"];
+  const data = TRIAGE_DATA[currentSelectedArea] || TRIAGE_DATA["domicilio"];
   const titleEl = document.getElementById("result-title");
   const subtitleEl = document.getElementById("result-subtitle");
   const descEl = document.getElementById("result-description");
-  const btnWhatsApp = document.getElementById("whatsapp-triage-btn");
-  const notesInput = document.getElementById("user-notes");
 
   if (titleEl) titleEl.textContent = data.title;
   if (subtitleEl) subtitleEl.textContent = data.subtitle;
   if (descEl) descEl.textContent = data.description;
-
-  const extraNotes = notesInput ? notesInput.value.trim() : "";
-  const timeLabel = TIME_LABELS[currentSelectedTime] || "algum tempo";
-
-  // Montagem da mensagem personalizada para o WhatsApp
-  let message = `Olá, ${CLINIC_CONFIG.therapistName}! Fiz a triagem no seu site:\n\n`;
-  message += `• Foco/Especialidade: *${data.whatsappTag}*\n`;
-  message += `• Duração/Fase: *${timeLabel}*\n`;
-  if (extraNotes) {
-    message += `• Detalhes: "${extraNotes}"\n`;
-  }
-  message += `\nGostaria de informações sobre disponibilidade para avaliação/agendamento!`;
-
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${CLINIC_CONFIG.whatsappNumber}?text=${encodedMessage}`;
-
-  if (btnWhatsApp) {
-    btnWhatsApp.href = whatsappUrl;
-  }
 }
 
 // Atualiza todos os links estáticos de WhatsApp com o número oficial

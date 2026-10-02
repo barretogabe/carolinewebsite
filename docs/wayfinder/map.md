@@ -21,15 +21,15 @@ Lançar o ecossistema digital oficial da Dra. Caroline Melo em produção (hospe
 <!-- the index: one line per closed ticket, enough to judge relevance, then zoom the link for the detail the ticket holds -->
 
 - [Alinhamento da Identidade Visual e Dados Oficiais da Dra. Caroline Melo](docs/wayfinder/tickets/T01-identidade-visual-e-dados-oficiais.md): Nome ajustado para Dra. Caroline Melo, paleta verde oliva/creme da arte incorporada, especialidades oficiais mapeadas e contatos/endereço do Janga (Paulista - PE) configurados.
+- [Integração Estratégica e Links do Instagram @melscarol](docs/wayfinder/tickets/T06-integracao-estrategica-instagram-melscarol.md): Opção 1 aprovada e implementada (Vitrine Editorial Nativa com fotos reais 1:1, Reel de Pilates em Grupo, sem rastreadores pesados e touchpoints no topo e rodapé).
 
 ## Tickets na Fronteira (Próximos Passos de Planejamento)
 
 1. [T05 - Posicionamento Estratégico das Informações do CV e Foto Oficial](docs/wayfinder/tickets/T05-posicionamento-estrategico-cv-e-autoridade.md) (`wayfinder:prototype` - Aberto)
-2. [T06 - Integração Estratégica e Links do Instagram @melscarol](docs/wayfinder/tickets/T06-integracao-estrategica-instagram-melscarol.md) (`wayfinder:prototype` - Aberto)
-3. [T02 - Design e Implementação do Formulário de Anamnese Digital Pré-Consulta](docs/wayfinder/tickets/T02-fluxo-anamnese-digital.md) (`wayfinder:prototype` - Aberto)
-4. [T03 - Estratégia de SEO Local e Checklist para Google Meu Negócio em Paulista/PE](docs/wayfinder/tickets/T03-seo-local-e-google-perfil-empresa.md) (`wayfinder:research` - Aberto)
-5. [T07 - Otimização Extrema de Usabilidade e Formato Amigável no Celular (Mobile-First)](docs/wayfinder/tickets/T07-otimizacao-extrema-mobile-first.md) (`wayfinder:task` - Bloqueado por T05 e T06)
-6. [T04 - Configuração de Deploy Contínuo e Publicação na Vercel com SSL](docs/wayfinder/tickets/T04-pipeline-deploy-producao-vercel.md) (`wayfinder:task` - Bloqueado por T03 e T07)
+2. [T02 - Design e Implementação do Formulário de Anamnese Digital Pré-Consulta](docs/wayfinder/tickets/T02-fluxo-anamnese-digital.md) (`wayfinder:prototype` - Aberto)
+3. [T03 - Estratégia de SEO Local e Checklist para Google Meu Negócio em Paulista/PE](docs/wayfinder/tickets/T03-seo-local-e-google-perfil-empresa.md) (`wayfinder:research` - Aberto)
+4. [T07 - Otimização Extrema de Usabilidade e Formato Amigável no Celular (Mobile-First)](docs/wayfinder/tickets/T07-otimizacao-extrema-mobile-first.md) (`wayfinder:task` - Bloqueado por T05)
+5. [T04 - Configuração de Deploy Contínuo e Publicação na Vercel com SSL](docs/wayfinder/tickets/T04-pipeline-deploy-producao-vercel.md) (`wayfinder:task` - Bloqueado por T03 e T07)
 
 ## Not yet specified
 
