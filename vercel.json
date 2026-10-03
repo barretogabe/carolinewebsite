@@ -3,17 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.carolinemelofisio.com.br"
-        }
-      ],
-      "destination": "https://carolinemelofisio.com.br/$1",
-      "permanent": true
-    },
+
     {
       "source": "/fisioterapia-:slug",
       "destination": "/#especialidades",
