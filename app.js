@@ -1,67 +1,130 @@
 /**
- * DRA. CAROLINE MELO • FISIOTERAPIA & PILATES
- * Script Principal da Aplicação
- * Gerencia a Ferramenta Interativa de Triagem, Menu Mobile, FAQ e Links Dinâmicos
+ * CAROLINE MELO FISIOTERAPIA • WEBSITE OFICIAL
+ * Configuração Centralizada de Negócio & Scripts da Aplicação
+ * Domínio: https://carolinemelofisio.com.br
  */
 
 // ==========================================
-// 1. CONFIGURAÇÕES PRINCIPAIS (Dados Oficiais)
+// 1. CONFIGURAÇÃO CENTRALIZADA (Fonte de Verdade)
 // ==========================================
-const CLINIC_CONFIG = {
-  // WhatsApp oficial: (81) 98834-5003
+const businessConfig = {
+  businessName: "Caroline Melo Fisioterapia",
+  brandHeading: "Caroline Melo | Fisioterapia e Pilates",
+  shortName: "Caroline Melo Fisio",
+  professionalName: "Caroline Melo",
+  crefito: "315194-F",
+  phone: "(81) 98834-5003",
   whatsappNumber: "5581988345003",
-  
-  // Nome e Registro da profissional
-  therapistName: "Dra. Caroline Melo",
-  therapistTitle: "Fisioterapeuta",
-
-  // Redes e Localização Oficial
+  email: "carolinemelo.fisio@hotmail.com", // NÃO ALTERAR (Regra Absoluta)
   instagramHandle: "@melscarol",
   instagramUrl: "https://instagram.com/melscarol",
-  address: "Av. Dr. José Cláudio Gueiros Leite, 571",
-  neighborhood: "Janga",
-  cityState: "Paulista - PE",
+  domain: "https://carolinemelofisio.com.br",
+  address: {
+    street: "Av. Dr. Cláudio José Gueiros Leite",
+    number: "571",
+    room: "Sala 14",
+    neighborhood: "Janga",
+    city: "Paulista",
+    state: "PE",
+    country: "BR",
+    fullAddress: "Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14, Janga, Paulista - PE",
+    mapsUrl: "https://maps.google.com/?q=Av.+Dr.+Cl%C3%A1udio+Jos%C3%A9+Gueiros+Leite,+571,+Sala+14,+Janga,+Paulista+-+PE"
+  },
+  serviceAreas: {
+    clinical: "Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14, Janga, Paulista - PE",
+    domiciliar: "Paulista, Olinda e região (sob consulta)",
+    eventos: "Localização definida conforme cada evento"
+  },
+  // Mensagens contextuais para WhatsApp (Item 23 da especificação)
+  whatsappMessages: {
+    geral: "Olá, Caroline! Encontrei seu site e gostaria de informações sobre atendimento fisioterapêutico.",
+    neurofuncional: "Olá, Caroline! Vi no seu site o atendimento de Fisioterapia Neurofuncional e gostaria de mais informações.",
+    pessoa_idosa: "Olá, Caroline! Gostaria de informações sobre atendimento fisioterapêutico para pessoa idosa.",
+    pos_operatorio: "Olá, Caroline! Gostaria de informações sobre acompanhamento fisioterapêutico no pós-operatório.",
+    traumato_ortopedia: "Olá, Caroline! Gostaria de informações sobre atendimento fisioterapêutico traumato-ortopédico.",
+    domiciliar: "Olá, Caroline! Gostaria de informações sobre atendimento fisioterapêutico domiciliar.",
+    pilates_clinico: "Olá, Caroline! Vi no site as informações sobre Pilates Clínico no Janga e gostaria de saber mais.",
+    pilates_eventos: "Olá, Caroline! Gostaria de informações sobre Pilates para um evento."
+  }
 };
 
 // ==========================================
-// 2. DADOS DO AVALIADOR INTERATIVO DE QUEIXAS
+// 2. HELPER CONDICIONAL DE ANALYTICS (GA4 & TRACKING ÉTICO)
+// ==========================================
+// O Analytics só executa se window.GA_MEASUREMENT_ID for configurado externamente.
+// JAMAIS envia dados de saúde, nomes, dores ou respostas de formulário.
+function trackEvent(eventName, params = {}) {
+  try {
+    // Sanitização rigorosa: garantir que nenhuma resposta clínica seja enviada
+    const safeParams = {};
+    const allowedKeys = ["service", "method", "location", "source", "event_category"];
+    Object.keys(params).forEach(k => {
+      if (allowedKeys.includes(k) && typeof params[k] === "string") {
+        safeParams[k] = params[k];
+      }
+    });
+
+    if (typeof window.gtag === "function" && window.GA_MEASUREMENT_ID) {
+      window.gtag("event", eventName, safeParams);
+    }
+  } catch (e) {
+    // Falha silenciosa para não quebrar a navegação
+  }
+}
+
+// ==========================================
+// 3. GERADOR DE LINK WHATSAPP CONTEXTUAL
+// ==========================================
+function getContextualWhatsAppUrl(serviceKey = "geral") {
+  const msg = businessConfig.whatsappMessages[serviceKey] || businessConfig.whatsappMessages.geral;
+  return `https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+}
+
+// ==========================================
+// 4. DADOS DO AVALIADOR INTERATIVO DE QUEIXAS (TRIAGEM)
 // ==========================================
 const TRIAGE_DATA = {
-  "pos-operatorio": {
-    title: "Recomendação Personalizada: Pós-Operatório de Cirurgia Plástica",
-    subtitle: "Drenagem Linfática Especializada + Taping + Manejo Tecidual",
-    description: "Para pacientes em recuperação pós-cirúrgica (lipoaspiração, abdominoplastia, mamoplastia), o acompanhamento fisioterapêutico especializado reduz edemas, previne fibroses, acelera a cicatrização tecidual e devolve o conforto e a mobilidade de forma suave e segura.",
-    whatsappTag: "Pós-Operatório de Cirurgia Plástica"
-  },
-  "neurofuncional": {
-    title: "Recomendação Personalizada: Fisioterapia Neurofuncional",
-    subtitle: "Reabilitação Motora, Equilíbrio e Plasticidade Neural",
-    description: "Atendimento voltado para a recuperação funcional em quadros neurológicos (sequelas de AVC, Parkinson, neuropatias e disfunções neuromotoras). Focamos no resgate do controle motor, marcha, equilíbrio e máxima autonomia para as atividades diárias.",
-    whatsappTag: "Fisioterapia Neurofuncional"
-  },
-  "idoso": {
-    title: "Recomendação Personalizada: Fisioterapia da Pessoa Idosa",
-    subtitle: "Geriatria Funcional, Prevenção de Quedas e Autonomia",
-    description: "Trabalho cuidadoso focado no fortalecimento muscular global, estabilidade articular, treino de equilíbrio e mobilidade. Pode ser realizado no estúdio ou com a comodidade do Atendimento a Domicílio para maior conforto e segurança da família.",
-    whatsappTag: "Fisioterapia da Pessoa Idosa"
-  },
-  "traumato-ortopedia": {
-    title: "Recomendação Personalizada: Traumato-Ortopedia & Dores Articulares",
-    subtitle: "Reabilitação da Coluna, Ombros, Joelhos e Lesões Musculares",
-    description: "Abordagem precisa para hérnias de disco, dores na coluna (lombalgia/cervicalgia), tendinites e recuperação pós-fratura. Combinamos terapia manual descompressiva e cinesioterapia baseada em evidências para eliminar a dor.",
-    whatsappTag: "Fisioterapia Traumato-Ortopédica"
-  },
   "domicilio": {
-    title: "Recomendação Personalizada: Pilates em Casa ou em Grupo & Domiciliar",
-    subtitle: "Aulas Particulares em Casa, Vivências e Grupos em Eventos",
-    description: "Levamos toda a estrutura do método Pilates e fisioterapia até você: seja para aulas particulares no conforto do seu lar, grupos de amigos/família ou eventos corporativos em Paulista, Olinda e região.",
-    whatsappTag: "Pilates em Casa ou em Grupo"
+    title: "Recomendação: Atendimento Domiciliar / Pilates",
+    subtitle: "Atendimento no Conforto do Lar ou em Grupos",
+    description: "Levamos a assistência fisioterapêutica e o método Pilates até você em Paulista, Olinda e região. Ideal para idosos, pós-operatório recente ou praticantes particulares.",
+    whatsappTag: "Atendimento Domiciliar / Pilates em Casa",
+    serviceKey: "domiciliar"
   },
   "pilates": {
-    title: "Recomendação Personalizada: Pilates no Estúdio",
+    title: "Recomendação: Pilates Clínico no Estúdio",
     subtitle: "Aparelhos Clássicos, Alinhamento Postural e Força do Core",
-    description: "Sessões no estúdio da Av. Dr. José Cláudio Gueiros Leite, 571. Aparelhos completos (Reformer, Cadillac, Barrel, Chair) conduzidos por fisioterapeuta para ganho de flexibilidade, postura impecável e condicionamento sem impacto nas articulações.",
-    whatsappTag: "Pilates em Estúdio"
+    description: "Sessões no estúdio na Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14. Aparelhos completos (Reformer, Cadillac, Barrel, Chair) conduzidos individualmente por fisioterapeuta.",
+    whatsappTag: "Pilates Clínico no Janga",
+    serviceKey: "pilates_clinico"
+  },
+  "neurofuncional": {
+    title: "Recomendação: Fisioterapia Neurofuncional",
+    subtitle: "Reabilitação Motora, Equilíbrio e Plasticidade Neural",
+    description: "Atendimento voltado para a recuperação funcional em quadros neurológicos (sequelas de AVC, Parkinson, neuropatias e disfunções neuromotoras). Foco em autonomia e mobilidade.",
+    whatsappTag: "Fisioterapia Neurofuncional",
+    serviceKey: "neurofuncional"
+  },
+  "pos-operatorio": {
+    title: "Recomendação: Pós-Operatório de Cirurgia Plástica",
+    subtitle: "Drenagem Linfática Especializada + Taping + Manejo Tecidual",
+    description: "Acompanhamento individualizado durante o processo de recuperação pós-operatória. Cuidados com edema, tecido cicatricial e retorno suave à funcionalidade com segurança clínica.",
+    whatsappTag: "Pós-Operatório",
+    serviceKey: "pos_operatorio"
+  },
+  "idoso": {
+    title: "Recomendação: Fisioterapia da Pessoa Idosa",
+    subtitle: "Gerontologia Funcional, Prevenção de Quedas e Autonomia",
+    description: "Cuidado voltado à mobilidade, equilíbrio, força e autonomia. Pode ser realizado no estúdio ou com a comodidade do Atendimento a Domicílio para maior segurança.",
+    whatsappTag: "Fisioterapia da Pessoa Idosa",
+    serviceKey: "pessoa_idosa"
+  },
+  "traumato-ortopedia": {
+    title: "Recomendação: Fisioterapia Traumato-Ortopédica",
+    subtitle: "Reabilitação da Coluna, Ombros, Joelhos e Lesões Musculares",
+    description: "Avaliação e tratamento de alterações musculoesqueléticas, dores articulares e na coluna. Planejamento terapêutico individualizado focado no alívio e na função.",
+    whatsappTag: "Fisioterapia Traumato-Ortopédica",
+    serviceKey: "traumato_ortopedia"
   }
 };
 
@@ -71,18 +134,31 @@ const TIME_LABELS = {
   cronico: "há mais de 6 meses (crônico)"
 };
 
+const PAIN_LABELS = {
+  0: "0/10 • Sem dor (Prevenção / Pilates)",
+  1: "1/10 • Desconforto muito leve",
+  2: "2/10 • Desconforto leve",
+  3: "3/10 • Dor leve a moderada",
+  4: "4/10 • Dor moderada",
+  5: "5/10 • Dor moderada marcante",
+  6: "6/10 • Dor persistente / incômoda",
+  7: "7/10 • Dor intensa",
+  8: "8/10 • Dor muito intensa",
+  9: "9/10 • Dor severa / quase insuportável",
+  10: "10/10 • Dor máxima / insuportável"
+};
+
 // ==========================================
-// 3. INICIALIZAÇÃO E EVENTOS
+// 5. INICIALIZAÇÃO E EVENTOS
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   initYear();
   initMobileMenu();
   initFaqAccordion();
   initTriageEngine();
-  updateAllWhatsAppLinks();
+  bindTrackingEvents();
 });
 
-// Atualiza o ano no rodapé automaticamente
 function initYear() {
   const yearElement = document.getElementById("current-year");
   if (yearElement) {
@@ -90,7 +166,6 @@ function initYear() {
   }
 }
 
-// Menu Mobile
 function initMobileMenu() {
   const menuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -117,16 +192,13 @@ function initMobileMenu() {
   });
 }
 
-// Acordeão de Perguntas Frequentes
 function initFaqAccordion() {
   const triggers = document.querySelectorAll(".faq-trigger");
-
   triggers.forEach(trigger => {
     trigger.addEventListener("click", () => {
       const content = trigger.nextElementSibling;
       const isOpen = !content.classList.contains("hidden");
 
-      // Fecha outros itens para manter elegância
       document.querySelectorAll(".faq-content").forEach(item => item.classList.add("hidden"));
       document.querySelectorAll(".faq-trigger").forEach(btn => btn.classList.remove("open"));
 
@@ -138,150 +210,110 @@ function initFaqAccordion() {
   });
 }
 
-// ==========================================
-// 4. LÓGICA DO AVALIADOR DE QUEIXAS & PRÉ-AVALIAÇÃO (TRIAGEM + ANAMNESE)
-// ==========================================
+// Gerenciamento da Triagem
 let currentSelectedArea = "domicilio";
 let currentSelectedTime = "pouco";
 let currentPainLevel = 0;
 
-const PAIN_LABELS = {
-  0: "0/10 • Sem dor (Prevenção / Pilates)",
-  1: "1/10 • Desconforto muito leve",
-  2: "2/10 • Desconforto leve",
-  3: "3/10 • Dor leve a moderada",
-  4: "4/10 • Dor moderada",
-  5: "5/10 • Dor moderada marcante",
-  6: "6/10 • Dor persistente / incômoda",
-  7: "7/10 • Dor intensa",
-  8: "8/10 • Dor muito intensa",
-  9: "9/10 • Dor severa / quase insuportável",
-  10: "10/10 • Dor máxima / insuportável"
-};
-
-function getPainBadgeColor(level) {
-  if (level === 0) return "bg-emerald-500/20 text-emerald-300 border-emerald-400/30";
-  if (level <= 3) return "bg-emerald-600/25 text-emerald-200 border-emerald-500/40";
-  if (level <= 6) return "bg-amber-500/25 text-amber-200 border-amber-400/40";
-  if (level <= 8) return "bg-orange-500/25 text-orange-200 border-orange-400/40";
-  return "bg-rose-500/25 text-rose-200 border-rose-400/40";
-}
-
 function initTriageEngine() {
-  const areaButtons = document.querySelectorAll("#area-options .triage-btn");
-  const timeButtons = document.querySelectorAll("#time-options .triage-time-btn");
-  const painSlider = document.getElementById("pain-slider");
-  const painButtons = document.querySelectorAll("#pain-buttons-container .pain-scale-btn");
-  const painBadge = document.getElementById("pain-badge");
-  const nameInput = document.getElementById("user-name");
-  const phoneInput = document.getElementById("user-phone");
-  const notesInput = document.getElementById("user-notes");
-  const historyInput = document.getElementById("user-history");
+  const areaButtons = document.querySelectorAll(".triage-btn");
+  const timeButtons = document.querySelectorAll(".triage-time-btn");
   const whatsappBtn = document.getElementById("whatsapp-triage-btn");
+  const slider = document.getElementById("pain-slider");
+  const painButtons = document.querySelectorAll(".pain-scale-btn");
+  const painBadge = document.getElementById("pain-badge");
+  const painInput = document.getElementById("selected-pain-level");
 
-  // Botões de Área
-  areaButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      areaButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentSelectedArea = btn.getAttribute("data-area");
-      renderTriageResult();
-    });
-  });
+  if (!areaButtons.length && !slider) return;
 
-  // Botões de Tempo
-  timeButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      timeButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentSelectedTime = btn.getAttribute("data-time");
-      renderTriageResult();
-    });
-  });
+  function setPainLevel(level) {
+    currentPainLevel = parseInt(level, 10);
+    if (slider) slider.value = currentPainLevel;
+    if (painInput) painInput.value = currentPainLevel;
 
-  // Slider de Rolagem de Dor (EVA 0 a 10)
-  if (painSlider) {
-    painSlider.addEventListener("input", (e) => {
-      const val = parseInt(e.target.value, 10);
-      setPainLevel(val);
-    });
-  }
-
-  // Botões Numéricos da Escala de Dor
-  painButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const val = parseInt(btn.getAttribute("data-pain"), 10);
-      setPainLevel(val);
-    });
-  });
-
-  function setPainLevel(val) {
-    currentPainLevel = val;
-    if (painSlider) painSlider.value = val;
-    
-    // Atualiza botões
     painButtons.forEach(btn => {
-      const bVal = parseInt(btn.getAttribute("data-pain"), 10);
-      if (bVal === val) {
+      if (parseInt(btn.getAttribute("data-pain"), 10) === currentPainLevel) {
         btn.classList.add("active");
       } else {
         btn.classList.remove("active");
       }
     });
 
-    // Atualiza badge de dor
     if (painBadge) {
-      painBadge.textContent = PAIN_LABELS[val] || `${val}/10`;
-      painBadge.className = `px-3 py-1 rounded-full text-xs font-bold border transition-colors ${getPainBadgeColor(val)}`;
+      painBadge.textContent = PAIN_LABELS[currentPainLevel] || `Nível ${currentPainLevel}`;
+      if (currentPainLevel === 0) {
+        painBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30";
+      } else if (currentPainLevel <= 4) {
+        painBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30";
+      } else {
+        painBadge.className = "px-3 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-400/30";
+      }
     }
-
-    renderTriageResult();
   }
 
-  // Inputs de Texto
-  [nameInput, phoneInput, notesInput, historyInput].forEach(inp => {
-    if (inp) {
-      inp.addEventListener("input", () => {
-        renderTriageResult();
-      });
-    }
+  if (slider) {
+    slider.addEventListener("input", (e) => setPainLevel(e.target.value));
+  }
+
+  painButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      setPainLevel(btn.getAttribute("data-pain"));
+    });
   });
 
-  // Botão de Envio para WhatsApp com validação humanizada
+  areaButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      areaButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentSelectedArea = btn.getAttribute("data-area");
+      renderTriageResult();
+      trackEvent("triage_start", { service: currentSelectedArea });
+    });
+  });
+
+  timeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      timeButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentSelectedTime = btn.getAttribute("data-time");
+    });
+  });
+
+  // Gatilhos externos para pré-selecionar especialidade
+  document.querySelectorAll("[data-select-area]").forEach(trigger => {
+    trigger.addEventListener("click", (e) => {
+      const area = trigger.getAttribute("data-select-area");
+      const targetBtn = document.querySelector(`.triage-btn[data-area="${area}"]`);
+      if (targetBtn) {
+        areaButtons.forEach(b => b.classList.remove("active"));
+        targetBtn.classList.add("active");
+        currentSelectedArea = area;
+        renderTriageResult();
+      }
+    });
+  });
+
   if (whatsappBtn) {
     whatsappBtn.addEventListener("click", () => {
+      const nameInput = document.getElementById("user-name");
       const name = nameInput ? nameInput.value.trim() : "";
-      
       if (!name) {
         if (nameInput) {
           nameInput.focus();
-          nameInput.classList.add("ring-2", "ring-emerald-400", "border-emerald-400");
-          setTimeout(() => {
-            nameInput.classList.remove("ring-2", "ring-emerald-400");
-          }, 2500);
+          nameInput.classList.add("border-rose-400");
+          setTimeout(() => nameInput.classList.remove("border-rose-400"), 2000);
         }
-        alert("Por favor, digite seu nome completo acima para que a Dra. Caroline possa te atender pessoalmente.");
+        alert("Por favor, informe seu nome para que a Dra. Caroline possa te identificar no atendimento.");
         return;
       }
 
-      const whatsappUrl = generateWhatsAppTriageUrl();
-      window.open(whatsappUrl, "_blank");
+      // Registro do evento analítico (sem dados de saúde)
+      trackEvent("triage_complete", { service: currentSelectedArea });
+      const targetUrl = generateWhatsAppTriageUrl();
+      window.open(targetUrl, "_blank");
     });
   }
 
-  // Links dos Cards de Especialidades (acionam a triagem automaticamente)
-  const specialtyLinks = document.querySelectorAll("[data-select-area]");
-  specialtyLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const area = link.getAttribute("data-select-area");
-      const targetBtn = document.querySelector(`#area-options .triage-btn[data-area="${area}"]`);
-      if (targetBtn) {
-        targetBtn.click();
-      }
-    });
-  });
-
-  // Render inicial
   renderTriageResult();
 }
 
@@ -300,28 +332,20 @@ function generateWhatsAppTriageUrl() {
   const painLabel = PAIN_LABELS[currentPainLevel] || `${currentPainLevel}/10`;
 
   let message = `📋 *TRIAGEM RÁPIDA & PRÉ-AVALIAÇÃO*\n`;
-  message += `_Dra. Caroline Melo • Fisioterapia & Pilates (CREFITO 315194-F)_\n\n`;
+  message += `_Caroline Melo Fisioterapia (CREFITO 315194-F)_\n\n`;
   
-  if (name) {
-    message += `👤 *Paciente:* ${name}\n`;
-  }
-  if (phone) {
-    message += `📱 *WhatsApp/Contato:* ${phone}\n`;
-  }
+  if (name) message += `👤 *Paciente:* ${name}\n`;
+  if (phone) message += `📱 *WhatsApp/Contato:* ${phone}\n`;
   message += `🎯 *Especialidade / Foco:* ${data.whatsappTag}\n`;
   message += `⏱️ *Tempo / Fase:* ${timeLabel}\n`;
   message += `⚡ *Nível de Dor/Desconforto:* ${painLabel}\n`;
 
-  if (notes) {
-    message += `\n🩺 *Queixa Principal / Objetivo:*\n"${notes}"\n`;
-  }
-  if (history) {
-    message += `🏥 *Histórico / Cirurgia Prévia:*\n"${history}"\n`;
-  }
+  if (notes) message += `\n🩺 *Queixa Principal / Objetivo:*\n"${notes}"\n`;
+  if (history) message += `🏥 *Histórico Relevante:*\n"${history}"\n`;
 
-  message += `\nOlá, Dra. Caroline! Preenchi minhas informações na triagem do site e gostaria de agendar uma avaliação.`;
+  message += `\nOlá, Caroline! Preenchi minhas informações na triagem do site e gostaria de agendar uma avaliação.`;
 
-  return `https://wa.me/${CLINIC_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 function renderTriageResult() {
@@ -335,12 +359,42 @@ function renderTriageResult() {
   if (descEl) descEl.textContent = data.description;
 }
 
-// Atualiza todos os links estáticos de WhatsApp com o número oficial
-function updateAllWhatsAppLinks() {
-  const allLinks = document.querySelectorAll('a[href*="wa.me"]');
-  allLinks.forEach(link => {
-    const currentUrl = new URL(link.href);
-    const textParam = currentUrl.searchParams.get("text") || `Olá, ${CLINIC_CONFIG.therapistName}! Gostaria de agendar uma consulta.`;
-    link.href = `https://wa.me/${CLINIC_CONFIG.whatsappNumber}?text=${encodeURIComponent(textParam)}`;
+// Binds de Tracking nos Elementos Interativos
+function bindTrackingEvents() {
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener("click", () => {
+      const service = link.getAttribute("data-service") || "geral";
+      trackEvent("whatsapp_click", { service: service });
+    });
+  });
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener("click", () => {
+      trackEvent("phone_click");
+    });
+  });
+
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+    link.addEventListener("click", () => {
+      trackEvent("instagram_click");
+    });
+  });
+
+  document.querySelectorAll('a[href*="maps.google.com"]').forEach(link => {
+    link.addEventListener("click", () => {
+      trackEvent("maps_click");
+    });
+  });
+
+  document.querySelectorAll('[data-service-view]').forEach(item => {
+    item.addEventListener("click", () => {
+      trackEvent("service_view", { service: item.getAttribute("data-service-view") });
+    });
+  });
+
+  document.querySelectorAll('[data-event="pilates_event_click"]').forEach(item => {
+    item.addEventListener("click", () => {
+      trackEvent("pilates_event_click", { service: "pilates_eventos" });
+    });
   });
 }

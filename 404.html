@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Não Encontrada (404) | Caroline Melo Fisioterapia</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://carolinemelofisio.com.br/404" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: { DEFAULT: '#5C7C49', light: '#82A16E', dark: '#435E34', ultralight: '#EEF3EB' },
+            cream: { DEFAULT: '#F7F3E7', card: '#FFFFFF', dark: '#EDE7D3' },
+            forest: { DEFAULT: '#1E2D18', light: '#2C4023', dark: '#121D0E' }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-cream text-forest font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header Simples -->
+  <header class="bg-cream/95 border-b border-sage/15 h-20 flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full border border-sage/30 overflow-hidden bg-cream-card flex items-center justify-center">
+          <img src="logo_cm.png" alt="Caroline Melo Fisioterapia" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-forest block leading-none">Caroline Melo</span>
+          <span class="text-[10px] uppercase tracking-widest text-sage font-bold">Fisioterapia • CREFITO 315194-F</span>
+        </div>
+      </a>
+      <a href="/" class="text-xs font-semibold text-forest hover:text-sage flex items-center gap-1.5">
+        <i class="fas fa-arrow-left"></i>
+        <span>Voltar ao início</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo 404 Amigável -->
+  <main class="flex-1 flex items-center justify-center py-16 px-4">
+    <div class="max-w-lg mx-auto text-center space-y-6">
+      <div class="w-20 h-20 rounded-full bg-sage/15 text-sage flex items-center justify-center mx-auto text-3xl">
+        <i class="fas fa-compass"></i>
+      </div>
+      
+      <div class="space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-sage">Erro 404</span>
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
+          Página não encontrada
+        </h1>
+        <p class="text-sm text-forest/75 leading-relaxed">
+          O link que você tentou acessar pode ter mudado ou não está mais disponível. Não se preocupe, você pode navegar pelas páginas do nosso site ou falar direto conosco.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="/" class="btn-primary w-full sm:w-auto px-6 py-3 text-sm flex items-center justify-center gap-2">
+          <i class="fas fa-house"></i>
+          <span>Ir para a Página Inicial</span>
+        </a>
+        <a href="https://wa.me/5581988345003" target="_blank" class="w-full sm:w-auto px-6 py-3 text-sm font-semibold bg-white border border-sage/30 rounded-full hover:border-sage flex items-center justify-center gap-2 text-forest">
+          <i class="fab fa-whatsapp text-emerald-600"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="pt-6 border-t border-sage/15 text-xs text-forest/70 space-y-2">
+        <p class="font-semibold text-forest">Páginas mais procuradas:</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/pilates-janga" class="hover:underline text-emerald-800">Pilates Clínico</a>
+          <span>•</span>
+          <a href="/fisioterapia-domiciliar" class="hover:underline text-emerald-800">Atendimento Domiciliar</a>
+          <span>•</span>
+          <a href="/pilates-para-eventos" class="hover:underline text-emerald-800">Pilates para Eventos</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé Simples -->
+  <footer class="bg-forest-dark text-cream/70 py-8 border-t border-sage/15 text-xs text-center">
+    <p>© Caroline Melo Fisioterapia | Janga, Paulista - PE</p>
+  </footer>
+
+</body>
+</html>
