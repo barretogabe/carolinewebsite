@@ -8,17 +8,6 @@
       "has": [
         {
           "type": "host",
-          "value": "carolinemelofisio.vercel.app"
-        }
-      ],
-      "destination": "https://carolinemelofisio.com.br/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
           "value": "www.carolinemelofisio.com.br"
         }
       ],
@@ -27,17 +16,17 @@
     },
     {
       "source": "/fisioterapia-:slug",
-      "destination": "https://carolinemelofisio.com.br/#especialidades",
+      "destination": "/#especialidades",
       "permanent": false
     },
     {
       "source": "/pilates-janga",
-      "destination": "https://carolinemelofisio.com.br/#estudio",
+      "destination": "/#estudio",
       "permanent": false
     },
     {
       "source": "/pilates-para-eventos",
-      "destination": "https://carolinemelofisio.com.br/#especialidades",
+      "destination": "/#especialidades",
       "permanent": false
     }
   ],
