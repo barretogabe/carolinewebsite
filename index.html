@@ -311,7 +311,7 @@
 
             <!-- H1 Oficial com a grafia original solicitada -->
             <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl font-bold text-forest leading-[1.15] tracking-tight">
-              Fisioterapia especializada e Pilates para uma vida com mais conforto e <span class="text-sage italic">menos limitações</span>.
+              Fisioterapia especializada e Pilates para uma vida com <span class="text-sage italic">mais conforto</span> e <span class="text-sage italic">menos limitações</span>.
             </h1>
 
             <!-- Apresentação Segura e Clara -->
@@ -549,16 +549,80 @@
           </p>
         </div>
 
-        <!-- Grid com os 7 serviços oficiais (Especificação 24) -->
+        <!-- Grid com os 6 serviços oficiais -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          <!-- Card 1: Fisioterapia Neurofuncional -->
+          <!-- Card 1: Pilates em Casa, em Eventos com Grupos e no Estúdio -->
+          <div class="service-card group flex flex-col justify-between">
+            <div>
+              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+                <img 
+                  src="assets/fotos/pilates_em_casa.jpg" 
+                  alt="Pilates em Casa, em Eventos com Grupos e no Estúdio Dra. Caroline Melo" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style="object-position: center 24%; filter: brightness(1.10) contrast(1.03);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Pilates em Casa, em Eventos com Grupos e no Estúdio
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
+                  Prática personalizada adaptada às suas necessidades: aulas particulares no conforto do seu lar, vivências corporais e aulas em grupo para eventos, ou sessões completas em aparelhos no estúdio.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20Pilates%20em%20Casa,%20em%20Eventos%20ou%20no%20Estúdio." target="_blank" data-service="pilates_clinico" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Personalizado • Domiciliar • Estúdio</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
+                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Atendimento a Domicílio -->
+          <div class="service-card group flex flex-col justify-between">
+            <div>
+              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+                <img 
+                  src="assets/fotos/atendimento_domiciliar.jpg" 
+                  alt="Atendimento Fisioterapêutico a Domicílio com Dra. Caroline Melo" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  style="object-position: center 30%; filter: brightness(1.14) contrast(1.04);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Atendimento a Domicílio
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
+                  Fisioterapia completa no conforto e na segurança do seu lar. Ideal para pacientes em pós-operatório recente, idosos ou quem possui rotina intensa em Paulista e adjacências.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20domiciliar." target="_blank" data-service="domiciliar" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Paulista, Olinda e Região</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
+                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Fisioterapia Neurofuncional -->
           <div class="service-card group flex flex-col justify-between">
             <div>
               <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
                 <img 
                   src="assets/fotos/neurofuncional_reabilitacao.jpg" 
-                  alt="Fisioterapia Neurofuncional - Caroline Melo" 
+                  alt="Fisioterapia Neurofuncional e Reabilitação Motora" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   style="object-position: center 25%; filter: brightness(1.02) contrast(1.01);"
                   loading="lazy"
@@ -569,60 +633,28 @@
                   Fisioterapia Neurofuncional
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Reabilitação individualizada de alterações do movimento e da funcionalidade relacionadas a condições neurológicas como AVC, Parkinson, esclerose múltipla e lesões nervosas.
+                  Tratamento e reabilitação de sequelas motoras e neuromusculares (AVC, Doença de Parkinson, neuropatias e traumatismos). Estimulação da neuroplasticidade e do equilíbrio.
                 </p>
               </div>
             </div>
             <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Vi%20no%20seu%20site%20o%20atendimento%20de%20Fisioterapia%20Neurofuncional%20e%20gostaria%20de%20mais%20informações." target="_blank" data-service="neurofuncional" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Reabilitação & Autonomia</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Agendar no WhatsApp</span>
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Vi%20no%20seu%20site%20o%20atendimento%20de%20Fisioterapia%20Neurofuncional%20e%20gostaria%20de%20mais%20informações." target="_blank" data-service="neurofuncional" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Resgate da autonomia</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
                   <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
                 </span>
               </a>
             </div>
           </div>
 
-          <!-- Card 2: Fisioterapia para Pessoa Idosa -->
-          <div class="service-card group flex flex-col justify-between">
-            <div>
-              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
-                <img 
-                  src="assets/fotos/idoso_assistido_barrel.jpg" 
-                  alt="Fisioterapia da Pessoa Idosa - Caroline Melo" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  style="object-position: center 25%; filter: brightness(1.09) contrast(1.03);"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 space-y-3">
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Fisioterapia para Pessoa Idosa
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Gerontologia funcional voltada à mobilidade, treino de equilíbrio, ganho de força muscular, prevenção de quedas e máxima autonomia nas atividades diárias.
-                </p>
-              </div>
-            </div>
-            <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20para%20pessoa%20idosa." target="_blank" data-service="pessoa_idosa" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Equilíbrio & Prevenção</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Agendar no WhatsApp</span>
-                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 3: Pós-Operatório -->
+          <!-- Card 4: Pós-Operatório de Cirurgia Plástica -->
           <div class="service-card group flex flex-col justify-between">
             <div>
               <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
                 <img 
                   src="assets/fotos/pos_operatorio_taping.jpg" 
-                  alt="Acompanhamento Fisioterapêutico no Pós-Operatório" 
+                  alt="Tratamento no Pós-Operatório com Taping Linfático e Terapia Manual" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   style="object-position: center 40%; filter: brightness(1.02) contrast(1.01);"
                   loading="lazy"
@@ -630,31 +662,63 @@
               </div>
               <div class="p-6 space-y-3">
                 <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Pós-Operatório
+                  Pós-Operatório de Cirurgia Plástica
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Acompanhamento pós-cirurgia plástica e reparadora com drenagem linfática manual especializada, aplicação de taping intraoperatório/tardio e prevenção de fibroses.
+                  Acompanhamento especializado para lipoaspiração, abdominoplastia e mamoplastia. Drenagem linfática manual, ultrassom terapêutico, manejo de fibroses e seromas.
                 </p>
               </div>
             </div>
             <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20acompanhamento%20fisioterapêutico%20no%20pós-operatório." target="_blank" data-service="pos_operatorio" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Recuperação Segura</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Agendar no WhatsApp</span>
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20acompanhamento%20fisioterapêutico%20no%20pós-operatório." target="_blank" data-service="pos_operatorio" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Recuperação segura</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
                   <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
                 </span>
               </a>
             </div>
           </div>
 
-          <!-- Card 4: Traumato-Ortopedia -->
+          <!-- Card 5: Fisioterapia da Pessoa Idosa -->
+          <div class="service-card group flex flex-col justify-between">
+            <div>
+              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
+                <img 
+                  src="assets/fotos/idoso_assistido_barrel.jpg" 
+                  alt="Fisioterapia da Pessoa Idosa e Gerontologia Funcional" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  style="object-position: center 25%; filter: brightness(1.09) contrast(1.03);"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
+                  Fisioterapia da Pessoa Idosa
+                </h3>
+                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
+                  Gerontologia funcional voltada à mobilidade, prevenção e reabilitação de quedas, fortalecimento muscular e preservação da independência nas atividades de vida diária.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20para%20pessoa%20idosa." target="_blank" data-service="pessoa_idosa" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Gerontologia funcional</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
+                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 6: Fisioterapia Traumato-Ortopédica -->
           <div class="service-card group flex flex-col justify-between">
             <div>
               <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
                 <img 
                   src="assets/fotos/ortopedia_reabilitacao.jpg" 
-                  alt="Fisioterapia Traumato-Ortopédica" 
+                  alt="Fisioterapia Traumato-Ortopédica e Reabilitação da Coluna" 
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   style="object-position: center 75%; filter: brightness(1.22) contrast(1.06);"
                   loading="lazy"
@@ -662,118 +726,21 @@
               </div>
               <div class="p-6 space-y-3">
                 <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Traumato-Ortopedia
+                  Fisioterapia Traumato-Ortopédica
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Avaliação e tratamento de dores na coluna, hérnias, bursites, tendinites, entorses, lesões articulares e reabilitação pós-fraturas ortopédicas.
+                  Avaliação e tratamento de dores na coluna, hérnias de disco, tendinites, bursites, entorses e disfunções posturais. Alívio de dores agudas e crônicas com cinesioterapia.
                 </p>
               </div>
             </div>
             <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20traumato-ortopédico." target="_blank" data-service="traumato_ortopedia" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Alívio & Mobilidade</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Agendar no WhatsApp</span>
+              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20traumato-ortopédico." target="_blank" data-service="traumato_ortopedia" class="pt-3 border-t border-sage/15 flex items-center justify-between gap-2 text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
+                <span class="text-sage font-medium whitespace-nowrap text-[11px] sm:text-xs">Alívio da dor e função</span>
+                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors whitespace-nowrap shrink-0">
+                  <span>Agendar</span>
                   <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
                 </span>
               </a>
-            </div>
-          </div>
-
-          <!-- Card 5: Pilates Clínico (Janga) -->
-          <div class="service-card group flex flex-col justify-between">
-            <div>
-              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
-                <img 
-                  src="assets/fotos/caroline_hero_reformer.jpg" 
-                  alt="Pilates Clínico no Janga - Caroline Melo" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  style="object-position: 94% center; filter: brightness(1.06) contrast(1.02);"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 space-y-3">
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Pilates Clínico
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Exercício orientado e individualizado em estúdio equipado no Janga, Paulista-PE. Foco em estabilização, correção postural e fortalecimento profundo.
-                </p>
-              </div>
-            </div>
-            <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Vi%20no%20site%20as%20informações%20sobre%20Pilates%20Clínico%20no%20Janga%20e%20gostaria%20de%20saber%20mais." target="_blank" data-service="pilates_clinico" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Estúdio no Janga</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Agendar no WhatsApp</span>
-                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 6: Atendimento Domiciliar -->
-          <div class="service-card group flex flex-col justify-between">
-            <div>
-              <div class="relative h-80 sm:h-96 overflow-hidden rounded-t-2xl bg-cream-card">
-                <img 
-                  src="assets/fotos/atendimento_domiciliar.jpg" 
-                  alt="Atendimento Domiciliar - Caroline Melo" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  style="object-position: center 30%; filter: brightness(1.14) contrast(1.04);"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 space-y-3">
-                <h3 class="font-serif text-xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Atendimento Domiciliar
-                </h3>
-                <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Fisioterapia e reabilitação no conforto da sua casa em Paulista, Olinda e região, com transporte de todos os equipamentos terapêuticos necessários.
-                </p>
-              </div>
-            </div>
-            <div class="p-6 pt-0">
-              <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico%20domiciliar." target="_blank" data-service="domiciliar" class="pt-3 border-t border-sage/15 flex items-center justify-between text-xs text-forest/75 hover:text-forest transition-colors group/cta cursor-pointer">
-                <span class="text-sage font-medium">Paulista, Olinda e Região</span>
-                <span class="inline-flex items-center gap-1.5 font-bold text-forest group-hover/cta:text-sage transition-colors">
-                  <span>Consultar no WhatsApp</span>
-                  <i class="fab fa-whatsapp text-sm text-emerald-600"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 7: Pilates para Eventos (Localização e Formato sob Medida) -->
-          <div class="service-card group flex flex-col justify-between md:col-span-2 lg:col-span-3 bg-gradient-to-br from-cream to-sage-ultralight border-sage/30">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-              <div class="md:col-span-5 h-72 sm:h-80 overflow-hidden rounded-2xl bg-cream-card">
-                <img 
-                  src="assets/fotos/pilates_em_casa.jpg" 
-                  alt="Pilates para Eventos com Caroline Melo" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  style="object-position: center 24%; filter: brightness(1.10) contrast(1.03);"
-                  loading="lazy"
-                />
-              </div>
-              <div class="md:col-span-7 p-4 sm:p-6 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/20 text-forest text-xs font-bold uppercase tracking-wider">
-                  <i class="fas fa-users text-sage"></i>
-                  <span>Ações Especiais & Grupos</span>
-                </div>
-                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest group-hover:text-sage transition-colors">
-                  Pilates para Eventos
-                </h3>
-                <p class="text-sm text-forest/80 leading-relaxed">
-                  Atividades e vivências de Pilates planejadas para eventos corporativos, encontros ao ar livre e ações especiais, com formato, duração e localização definidos sob medida.
-                </p>
-                <div class="flex flex-wrap items-center gap-4 pt-2">
-                  <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20Pilates%20para%20um%20evento." target="_blank" data-service="pilates_eventos" class="btn-primary flex items-center gap-2.5 text-xs sm:text-sm px-6 py-3.5 shadow-lg hover:scale-105 transition-all">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Solicitar Pilates para Eventos no WhatsApp</span>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
 
