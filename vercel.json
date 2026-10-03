@@ -24,6 +24,21 @@
       ],
       "destination": "https://carolinemelofisio.com.br/$1",
       "permanent": true
+    },
+    {
+      "source": "/fisioterapia-:slug",
+      "destination": "https://carolinemelofisio.com.br/#especialidades",
+      "permanent": false
+    },
+    {
+      "source": "/pilates-janga",
+      "destination": "https://carolinemelofisio.com.br/#estudio",
+      "permanent": false
+    },
+    {
+      "source": "/pilates-para-eventos",
+      "destination": "https://carolinemelofisio.com.br/#especialidades",
+      "permanent": false
     }
   ],
   "headers": [

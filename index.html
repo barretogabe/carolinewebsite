@@ -75,30 +75,105 @@
   <!-- Folha de Estilos Personalizada -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Schema.org Microdados Estruturados (LocalBusiness e Person) -->
+  <!-- Schema.org Microdados Estruturados (LocalBusiness, Physiotherapist, Person e Catálogo de Serviços) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "Physiotherapist", "MedicalBusiness"],
         "@id": "https://carolinemelofisio.com.br/#business",
         "name": "Caroline Melo Fisioterapia",
         "alternateName": "Caroline Melo | Fisioterapia e Pilates",
-        "url": "https://carolinemelofisio.com.br",
+        "url": "https://carolinemelofisio.com.br/",
         "telephone": "+55-81-98834-5003",
         "email": "carolinemelo.fisio@hotmail.com",
         "image": "https://carolinemelofisio.com.br/assets/fotos/caroline_perfil.jpg",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14",
           "addressLocality": "Paulista",
           "addressRegion": "PE",
+          "postalCode": "53437-000",
           "addressCountry": "BR"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.9427,
+          "longitude": -34.8291
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Janga, Paulista - PE" },
+          { "@type": "City", "name": "Paulista" },
+          { "@type": "City", "name": "Olinda" },
+          { "@type": "AdministrativeArea", "name": "Região Metropolitana do Recife" }
+        ],
         "sameAs": [
           "https://instagram.com/melscarol"
-        ]
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços de Fisioterapia e Pilates",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fisioterapia Neurofuncional",
+                "description": "Reabilitação neurológica individualizada focada em marcha, equilíbrio, tônus muscular e autonomia funcional."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fisioterapia para Pessoa Idosa",
+                "description": "Gerontologia funcional para fortalecimento, prevenção de quedas, mobilidade articular e independência no cotidiano."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fisioterapia no Pós-Operatório",
+                "description": "Acompanhamento fisioterapêutico especializado pós-cirurgia plástica e reparadora com drenagem linfática manual, taping e manejo de fibroses."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fisioterapia Traumato-Ortopédica",
+                "description": "Tratamento de dores na coluna, lesões musculares, articulares, tendinites e reabilitação pós-fratura."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pilates Clínico no Janga",
+                "description": "Pilates em estúdio completo com Cadillac, Reformer e Ladder Barrel no Janga, Paulista - PE."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Atendimento Fisioterapêutico Domiciliar",
+                "description": "Atendimento fisioterapêutico personalizado no domicílio em Paulista, Olinda e região com todos os recursos necessários."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Pilates para Eventos e Grupos",
+                "description": "Aulas e vivências corporais de Pilates adaptadas para eventos corporativos, grupos e ações especiais."
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "Person",
@@ -167,14 +242,15 @@
         </div>
       </a>
 
-      <!-- Menu Desktop (Início | Serviços | Sobre | Domiciliar | Localização | FAQ | Contato) -->
+      <!-- Menu Desktop (Início | Serviços | Sobre | Estúdio Pilates | Triagem | Dúvidas | Localização) -->
       <nav class="hidden md:flex items-center gap-3 lg:gap-4">
-        <a href="/" class="text-xs lg:text-sm font-medium text-forest hover:text-sage transition-colors whitespace-nowrap">Início</a>
+        <a href="#" class="text-xs lg:text-sm font-medium text-forest hover:text-sage transition-colors whitespace-nowrap">Início</a>
         <a href="#especialidades" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Serviços</a>
         <a href="#sobre" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Sobre</a>
-        <a href="/fisioterapia-domiciliar" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Domiciliar</a>
+        <a href="#estudio" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Estúdio Pilates</a>
+        <a href="#triagem" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Triagem</a>
+        <a href="#faq" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Dúvidas</a>
         <a href="#localizacao" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">Localização</a>
-        <a href="#faq" class="text-xs lg:text-sm font-medium text-forest/80 hover:text-sage transition-colors whitespace-nowrap">FAQ</a>
       </nav>
 
       <!-- CTA Header -->
@@ -194,18 +270,16 @@
     <!-- Menu Mobile Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-cream-card border-b border-sage/20 px-6 py-5 shadow-xl transition-all">
       <nav class="flex flex-col gap-3">
-        <a href="/" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Início</a>
-        <a href="#especialidades" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Serviços Fisioterapêuticos & Pilates</a>
+        <a href="#" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Início</a>
+        <a href="#especialidades" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Serviços & Especialidades</a>
         <a href="#sobre" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Sobre Caroline Melo</a>
-        <a href="/fisioterapia-domiciliar" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Atendimento Domiciliar</a>
-        <a href="/pilates-janga" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Pilates Clínico (Janga)</a>
-        <a href="/pilates-para-eventos" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Pilates para Eventos</a>
-        <a href="#localizacao" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Localização (Janga)</a>
-        <a href="#faq" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Perguntas Frequentes</a>
+        <a href="#estudio" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Estúdio de Pilates (Janga)</a>
         <a href="#triagem" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10 flex items-center justify-between">
           <span>Triagem Rápida</span>
-          <span class="text-xs bg-sage/20 text-forest font-bold px-2 py-0.5 rounded-full">Secundário</span>
+          <span class="text-xs bg-sage/20 text-forest font-bold px-2 py-0.5 rounded-full">Pré-Avaliação</span>
         </a>
+        <a href="#faq" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Dúvidas</a>
+        <a href="#localizacao" class="mobile-nav-link text-sm font-medium text-forest hover:text-sage py-1.5 border-b border-sage/10">Localização (Janga)</a>
         <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Encontrei%20seu%20site%20e%20gostaria%20de%20informações%20sobre%20atendimento%20fisioterapêutico." target="_blank" data-service="geral" class="btn-primary justify-center w-full mt-2 flex items-center gap-2 min-h-[48px]">
           <i class="fab fa-whatsapp text-lg"></i>
           <span>Falar com Caroline pelo WhatsApp</span>
@@ -235,18 +309,15 @@
               <span>Caroline Melo • CREFITO 315194-F</span>
             </div>
 
-            <!-- H1 Oficial Conforme Especificação 19 -->
+            <!-- H1 Oficial com a grafia original solicitada -->
             <h1 class="font-serif text-3xl sm:text-5xl lg:text-5xl font-bold text-forest leading-[1.15] tracking-tight">
-              Fisioterapia e Pilates no Janga, Paulista - PE
+              Fisioterapia especializada e Pilates para uma vida com mais conforto e <span class="text-sage italic">menos limitações</span>.
             </h1>
 
-            <!-- Slogan e Apresentação Segura (Itens 19 e 20) -->
+            <!-- Apresentação Segura e Clara -->
             <div class="space-y-3">
-              <p class="text-forest text-base sm:text-lg font-semibold leading-relaxed">
-                Fisioterapia e Pilates para mais movimento, autonomia e qualidade de vida.
-              </p>
-              <p class="text-forest/80 text-sm sm:text-base leading-relaxed">
-                Atendimento individualizado com foco em movimento, funcionalidade, autonomia e qualidade de vida. Atendimento clínico no Janga, fisioterapia domiciliar em Paulista, Olinda e região e Pilates para eventos.
+              <p class="text-forest text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                Atendimentos no consultório no <strong>Janga (Paulista - PE)</strong> e com a comodidade do <strong>Atendimento a Domicílio</strong> em Paulista, Olinda e região. Reabilitação neurofuncional, gerontologia funcional (pessoa idosa), pós-operatório de cirurgia plástica, traumato-ortopedia e Pilates Clínico.
               </p>
             </div>
 
@@ -498,14 +569,8 @@
                   Fisioterapia Neurofuncional
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Reabilitação individualizada de alterações do movimento e da funcionalidade relacionadas a condições neurológicas.
+                  Reabilitação individualizada de alterações do movimento e da funcionalidade relacionadas a condições neurológicas como AVC, Parkinson, esclerose múltipla e lesões nervosas.
                 </p>
-                <div class="pt-1">
-                  <a href="/fisioterapia-neurofuncional" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Saiba mais sobre Neurofuncional</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -536,14 +601,8 @@
                   Fisioterapia para Pessoa Idosa
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Cuidado voltado à mobilidade, equilíbrio, força, funcionalidade e autonomia.
+                  Gerontologia funcional voltada à mobilidade, treino de equilíbrio, ganho de força muscular, prevenção de quedas e máxima autonomia nas atividades diárias.
                 </p>
-                <div class="pt-1">
-                  <a href="/fisioterapia-pessoa-idosa" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Saiba mais sobre Pessoa Idosa</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -574,14 +633,8 @@
                   Pós-Operatório
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Acompanhamento fisioterapêutico individualizado durante o processo de recuperação pós-operatória.
+                  Acompanhamento pós-cirurgia plástica e reparadora com drenagem linfática manual especializada, aplicação de taping intraoperatório/tardio e prevenção de fibroses.
                 </p>
-                <div class="pt-1">
-                  <a href="/fisioterapia-pos-operatorio" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Saiba mais sobre Pós-Operatório</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -612,14 +665,8 @@
                   Traumato-Ortopedia
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Avaliação e tratamento fisioterapêutico de alterações musculoesqueléticas.
+                  Avaliação e tratamento de dores na coluna, hérnias, bursites, tendinites, entorses, lesões articulares e reabilitação pós-fraturas ortopédicas.
                 </p>
-                <div class="pt-1">
-                  <a href="/fisioterapia-traumato-ortopedica" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Saiba mais sobre Ortopedia</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -650,14 +697,8 @@
                   Pilates Clínico
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Exercício orientado e individualizado realizado no Janga, em Paulista-PE.
+                  Exercício orientado e individualizado em estúdio equipado no Janga, Paulista-PE. Foco em estabilização, correção postural e fortalecimento profundo.
                 </p>
-                <div class="pt-1">
-                  <a href="/pilates-janga" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Conhecer o Pilates Clínico no Janga</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -688,14 +729,8 @@
                   Atendimento Domiciliar
                 </h3>
                 <p class="text-xs sm:text-sm text-forest/75 leading-relaxed">
-                  Fisioterapia realizada no domicílio em Paulista, Olinda e região, conforme disponibilidade.
+                  Fisioterapia e reabilitação no conforto da sua casa em Paulista, Olinda e região, com transporte de todos os equipamentos terapêuticos necessários.
                 </p>
-                <div class="pt-1">
-                  <a href="/fisioterapia-domiciliar" class="text-xs font-semibold text-forest/80 hover:text-sage underline inline-flex items-center gap-1">
-                    <span>Consultar atendimento domiciliar</span>
-                    <i class="fas fa-arrow-right text-[10px]"></i>
-                  </a>
-                </div>
               </div>
             </div>
             <div class="p-6 pt-0">
@@ -730,16 +765,12 @@
                   Pilates para Eventos
                 </h3>
                 <p class="text-sm text-forest/80 leading-relaxed">
-                  Atividades de Pilates planejadas para eventos e ações especiais, com formato e localização definidos conforme cada proposta. Proposta adaptada ao perfil dos participantes, espaço e objetivos.
+                  Atividades e vivências de Pilates planejadas para eventos corporativos, encontros ao ar livre e ações especiais, com formato, duração e localização definidos sob medida.
                 </p>
                 <div class="flex flex-wrap items-center gap-4 pt-2">
-                  <a href="/pilates-para-eventos" class="btn-primary flex items-center gap-2 text-xs sm:text-sm px-5 py-3">
-                    <span>Ver detalhes de Pilates para Eventos</span>
-                    <i class="fas fa-arrow-right text-[11px]"></i>
-                  </a>
-                  <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20Pilates%20para%20um%20evento." target="_blank" data-event="pilates_event_click" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-800 hover:text-emerald-950 underline">
-                    <i class="fab fa-whatsapp text-base"></i>
-                    <span>Quero Pilates no meu evento</span>
+                  <a href="https://wa.me/5581988345003?text=Olá,%20Caroline!%20Gostaria%20de%20informações%20sobre%20Pilates%20para%20um%20evento." target="_blank" data-service="pilates_eventos" class="btn-primary flex items-center gap-2.5 text-xs sm:text-sm px-6 py-3.5 shadow-lg hover:scale-105 transition-all">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Solicitar Pilates para Eventos no WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -1094,7 +1125,7 @@
               <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="text-xs text-forest/70 flex items-start gap-2 max-w-md">
                   <i class="fas fa-shield-halved text-sage mt-0.5 shrink-0"></i>
-                  <span>As informações enviadas serão utilizadas para contato e direcionamento inicial do atendimento. Consulte nossa <a href="/politica-de-privacidade" class="text-emerald-800 font-semibold underline hover:text-emerald-950">Política de Privacidade</a>.</span>
+                  <span>As informações enviadas serão utilizadas para contato e direcionamento inicial do atendimento. Consulte nossa <a href="politica-de-privacidade.html" class="text-emerald-800 font-semibold underline hover:text-emerald-950">Política de Privacidade</a>.</span>
                 </div>
                 
                 <button type="button" id="whatsapp-triage-btn" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center gap-2 text-sm bg-emerald-600 hover:bg-emerald-700 min-h-[48px] cursor-pointer shrink-0">
@@ -1221,17 +1252,17 @@
       </div>
     </section>
 
-    <!-- SEÇÃO: PERGUNTAS FREQUENTES & QUEBRA DE DÚVIDAS -->
+    <!-- SEÇÃO: DÚVIDAS FREQUENTES & ESCLARECIMENTOS -->
     <section id="faq" class="py-20 bg-cream-card border-b border-sage/15">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-forest text-xs font-semibold uppercase tracking-wider">
             <i class="fas fa-circle-question text-sage"></i>
-            <span>Dúvidas Frequentes</span>
+            <span>Dúvidas</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest">
-            Tudo o que você precisa saber antes de agendar
+            Dúvidas Frequentes
           </h2>
           <p class="text-forest/75 text-sm sm:text-base">
             Esclareça as dúvidas mais comuns sobre o atendimento, autonomia profissional e agendamento.
@@ -1490,15 +1521,14 @@
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-cream/80">
-          <a href="/" class="hover:text-white transition-colors">Início</a>
-          <a href="/fisioterapia-neurofuncional" class="hover:text-white transition-colors">Neurofuncional</a>
-          <a href="/fisioterapia-pessoa-idosa" class="hover:text-white transition-colors">Pessoa Idosa</a>
-          <a href="/fisioterapia-pos-operatorio" class="hover:text-white transition-colors">Pós-Op</a>
-          <a href="/fisioterapia-traumato-ortopedica" class="hover:text-white transition-colors">Ortopedia</a>
-          <a href="/pilates-janga" class="hover:text-white transition-colors">Pilates Clínico</a>
-          <a href="/pilates-para-eventos" class="hover:text-white transition-colors">Pilates Eventos</a>
-          <a href="/fisioterapia-domiciliar" class="hover:text-white transition-colors">Domiciliar</a>
-          <a href="/politica-de-privacidade" class="hover:text-white transition-colors underline">Privacidade</a>
+          <a href="#" class="hover:text-white transition-colors">Início</a>
+          <a href="#especialidades" class="hover:text-white transition-colors">Serviços</a>
+          <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
+          <a href="#estudio" class="hover:text-white transition-colors">Estúdio Pilates</a>
+          <a href="#triagem" class="hover:text-white transition-colors">Triagem</a>
+          <a href="#faq" class="hover:text-white transition-colors">Dúvidas</a>
+          <a href="#localizacao" class="hover:text-white transition-colors">Localização</a>
+          <a href="politica-de-privacidade.html" class="hover:text-white transition-colors underline">Privacidade</a>
         </div>
 
         <div class="flex items-center gap-3">
@@ -1513,7 +1543,7 @@
 
       <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center text-cream/50 text-[11px]">
         <p>© <span id="current-year"></span> Caroline Melo Fisioterapia. Todos os direitos reservados. E-mail: carolinemelo.fisio@hotmail.com</p>
-        <p>Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14, Janga, Paulista - PE | CREFITO 315194-F | <a href="/politica-de-privacidade" class="underline hover:text-white">Política de Privacidade</a></p>
+        <p>Av. Dr. Cláudio José Gueiros Leite, nº 571, Sala 14, Janga, Paulista - PE | CREFITO 315194-F | <a href="politica-de-privacidade.html" class="underline hover:text-white">Política de Privacidade</a></p>
       </div>
 
     </div>
